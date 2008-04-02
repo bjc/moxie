@@ -1,0 +1,7 @@
+*~
+*.fasl
+build
+Moxie.xcodeproj/*.pbxuser
+Moxie.xcodeproj/*.perspectivev3
+Moxie.xcodeproj/*.mode1
+Lisp/sbcl/sbcl.core
