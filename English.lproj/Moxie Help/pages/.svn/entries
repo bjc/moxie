@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="20"
+   name=""
+   committed-date="2005-12-27T15:21:23.068810Z"
+   url="svn+ssh://coleridge/svn/Moxie/trunk/English.lproj/Moxie%20Help/pages"
+   last-author="bjc"
+   kind="dir"
+   uuid="2641c99b-6c07-0410-920d-927397d2d5d0"
+   revision="47"/>
+<entry
+   committed-rev="20"
+   name="lisp-functions.html"
+   text-time="2005-12-23T23:28:43.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="a485095a82d3c831b544e09263f0e4bf"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:58.000000Z"/>
+<entry
+   committed-rev="20"
+   name="function-template.html"
+   text-time="2005-12-23T23:28:43.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="9eabe834fd9ad991f07290d4724b3142"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:57.000000Z"/>
+<entry
+   committed-rev="20"
+   name="plugin.html"
+   text-time="2005-12-23T23:28:43.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="688de8c0ce9d8eaa504fb5cc8b61cb50"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:59.000000Z"/>
+<entry
+   committed-rev="20"
+   name="navigation.html"
+   text-time="2005-12-23T23:28:43.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="4f4a317129a3ffd61e77f96e9492de72"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:58.000000Z"/>
+<entry
+   committed-rev="20"
+   name="bugs.html"
+   text-time="2005-12-23T23:28:43.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="d19c3585914c47587f83a4b6f4021401"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:57.000000Z"/>
+<entry
+   committed-rev="20"
+   name="whatsnew.html"
+   text-time="2005-12-23T23:28:43.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="96e631076fccdba18a44a07552e08bbe"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:59.000000Z"/>
+<entry
+   committed-rev="20"
+   name="glossary.html"
+   text-time="2005-12-23T23:28:43.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="acc70845ae51c8e3184bbde79cf33e93"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:58.000000Z"/>
+<entry
+   committed-rev="20"
+   name="todo.html"
+   text-time="2005-12-23T23:28:44.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="916a1c9889586af828188b6cc51de553"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:59.000000Z"/>
+<entry
+   committed-rev="20"
+   name="overview.html"
+   text-time="2005-12-23T23:28:44.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="8ff95b2bf74010bfd59bd13830a60799"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:59.000000Z"/>
+<entry
+   committed-rev="20"
+   name="faq.html"
+   text-time="2005-12-23T23:28:44.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="27624749cefddd3be4ebf30ef4e2697a"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:57.000000Z"/>
+<entry
+   committed-rev="20"
+   name="lisp-glossary.html"
+   text-time="2005-12-23T23:28:44.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="255c92563ea1a439ffdf37bc48987d17"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:58.000000Z"/>
+</wc-entries>

@@ -1,0 +1,947 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+
+<html lang="en">
+  <head>
+    <title>Lisp Functions</title>
+    <meta name="generator" content="Emacs!">
+  </head>
+
+  <body>
+    <h1>Moxie plugin functions</h1>
+    <p>These functions are all exported from the <code>MOXIE</code>
+      <a href="lisp-glossary.html#package">package</a>.
+    </p>
+    <p>
+      Contents:
+      <ul>
+	<li><a href="#world-var">world-var</a></li>
+	<li><a href="#add-hook">add-hook</a></li>
+	<li><a href="#remove-hook">remove-hook</a></li>
+	<li><a href="#run-hook">run-hook</a></li>
+	<li><a href="#add-keyword">add-keyword</a></li>
+	<li><a href="#remove-keyword">remove-keyword</a></li>
+	<li><a href="#add-keystroke-macro">add-keystroke-macro</a></li>
+	<li><a href="#remove-keystroke-macro">remove-keystroke-macro</a></li>
+	<li><a href="#send-to-mux">send-to-mux</a></li>
+	<li><a href="#print-to-world">print-to-world</a></li>
+	<li><a href="#set-status-buffer">set-status-buffer</a></li>
+	<li><a href="#enable-logging">enable-logging</a></li>
+	<li><a href="#disable-logging">disable-logging</a></li>
+	<li><a href="#make-attributed-string">make-attributed-string</a></li>
+<!--
+    We're going to lose these functions, in preference to a key/value
+    system.
+
+	<li><a href="#make-range">make-range</a></li>
+	<li><a href="#make-font">make-font</a></li>
+	<li><a href="#make-color">make-color</a></li>
+	<li><a href="#make-super">make-super</a></li>
+	<li><a href="#make-underline">make-underline</a></li>
+	<li><a href="#make-link">make-link</a></li> -->
+
+	<li><a href="#escape-mux-string">escape-mux-string</a></li>
+	<li><a href="#map-variables">map-variables</a></li>
+      </ul>
+    </p>
+
+    <hr>
+    <p><a id="world-var"><i>Function</i> <b>WORLD-VAR</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>world-var</b> <i>name</i> <code>&amp;optional</code> (<i>world-id</i> <i>*world*</i>) => <i>result</i>
+    </p>
+    <p>
+      (setf (<b>world-var</b> <i>name</i> <code>&amp;optional</code> (<i>world-id</i> *world*)) <i>new-value</i>)
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>name</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+      <p><i>world-id</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+      <p><i>result</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      <b>world-var</b> is used to associate <a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_v.htm#value">values</a></i>, which are persistent throughout the application's lifetime, with <i>name</i> for a particular Moxie world, which has the unique identifier, <i>world-id</i>.
+    </p>
+    <p>
+      <b><a href="http://www.lispworks.com/reference/HyperSpec/Body/m_setf_.htm#setf">setf</a></b> may be used with <b><a href="#world-var">world-var</a></b> to modify the <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_v.htm#value">values</a></i> associated with a given <i>name</i>, or to add a new entry.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (setf (world-var :foo 0) 'bar) => BAR
+  (world-var :foo 0) => BAR
+  (world-var :foo 1) => NIL
+  (setf (world-var :foo 1) 'YOW) => YOW
+  (world-var :foo 1) => YOW
+  (world-var :foo 0) => BAR</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      <i>world-id</i> is available as the <code>*world*</code> special variable.
+    </p>
+
+    <hr>
+    <p><a id="add-hook"><i>Function</i> <b>ADD-HOOK</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>add-hook</b> <i>function</i> <i>mode</i> => <i>hook-list</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>function</i>--a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_f.htm#function_designator">function designator</a></i>.
+      <p><i>mode</i>---A <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_k.htm#keyword">keyword</a></i>.</p>
+      <p><i>hook-list</i>---A <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i> containing the active <i>functions</i> for <i>mode</i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p><b>add-hook</b> adds <i>function</i> to the list of functions to be run when
+      the hook <i>mode</i> is executed via <b>run-hook</b>.</p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>
+  (defun my-printer (string)
+    (let ((string (if (stringp string) string (car string))))
+      (concatenate 'string "TEST: " string))) => MY-PRINTER
+  (add-hook 'my-printer :output-from-server-hook) => (MY-PRINTER)
+  (run-hook :output-from-server-hook "foo") => "TEST: foo"
+  (defun 'do-nothing (&amp;rest args) nil) => DO-NOTHING
+  (add-hook 'do-nothing :output-from-server-hook) => (MY-PRINTER DO-NOTHING)
+  (run-hook :output-from-server-hook "foo") => "TEST: foo"</pre>
+    </p>
+
+    <p><b>Side Effects:</b></p>
+    <p><i>function</i> will be run by <b>run-hook</b> for <i>mode</i>.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#remove-hook">remove-hook</a></b>
+      <b><a href="#run-hook">run-hook</a></b>
+    </p>
+
+    <p><b>Notes:</b>
+    <p>If <i>function</i> is already on the hook list for <i>mode</i>, it will
+      not be added again.</p>
+
+    <hr>
+    <p><a id="remove-hook"><i>Function</i> <b>REMOVE-HOOK</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>remove-hook</b> <i>function</i> <i>mode</i> => <i>hook-list</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>function</i>--a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_f.htm#function_designator">function designator</a></i>.
+      <p><i>mode</i>---A <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_k.htm#keyword">keyword</a></i>.</p>
+      <p><i>hook-list</i>---A <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i> containing the active <i>functions</i> for <i>mode</i>.</p>
+    </p>
+
+    <p><b>Description:</b> None.</p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>
+  (remove-hook 'my-printer :output-from-server-hook) => NIL</pre></p>
+
+    <p><b>Side Effects:</b></p>
+    <p><i>function</i> is no longer called by <code>run-hook</code>.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#add-hook">add-hook</a></b>
+      <b><a href="#run-hook">run-hook</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      If <i>function</i> is not on the hook list for <i>mode</i>, the hook list is
+      returned without change. You can use this facility to get the current list
+      of <i>functions</i> for <i>mode</i> by removing <a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_n.htm#nil">NIL</a> from the hook list.
+    </p>
+
+    <hr>
+    <p><a id="run-hook"><i>Function</i> <b>RUN-HOOK</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>run-hook</b> <i>mode</i> <code><i>&amp;optional</i></code> <i>arg</i>
+      => <i>result*</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>mode</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_k.htm#keyword">keyword</a></i>.</p>
+      <p><i>arg</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+      <p><i>results</i>---the <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_v.htm#value">values</a></i> returned by the last non-NIL terminating function.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      <a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_a.htm#apply">Applies</a> the
+      <i>functions</i> for <i>mode</i> to the <i>args</i>.
+    </p>
+    <p>
+      A hook-list acts as a filter, passing the output of one filter into the input of
+      the next. If a function on the hook-list returns <b>NIL</b>, it is treated in this iteration
+      as if it hadn't been on the hook-list in the first place. Thus, the only time
+      <b>run-hook</b> returns <b>NIL</b> is when every function on the hook-list returns
+      <b>NIL</b>.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>
+  (run-hook :output-from-server-hook "Foobar!") => "TEST: Foobar!"</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b></p>
+    <p>
+      The hook list for <i>mode</i>. All the functions on the list are called, in
+      order. The last function which returns a non-nil value is used as the result
+      function.
+    </p>
+
+    <p><b>Exceptional Situations:</b></p>
+    <p>
+      If a <i>function</i> on the hook list for <i>mode</i> is not a function
+      designator, an error will be raised.
+    </p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#add-hook">add-hook</a></b>
+      <b><a href="#remove-hook">remove-hook</a></b>
+    </p>
+
+    <p><b>Notes:</b> None.</p>
+
+    <hr>
+    <p><a id="add-keyword"><i>Function</i> <b>ADD-KEYWORD</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>add-keyword</b> <i>function</i> <i>keyword</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>function</i>--a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_f.htm#function_designator">function designator</a></i>.
+      <p><i>keyword</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+      <p><i>result</i>---the <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_f.htm#function_designator">function designator</a></i> for <i>keyword</i>.</p>
+    </p>
+
+    <p><b>Description:</b> None.</p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (defun my-keyword (args)
+    (format t "Keyword expander: ~S~%" args)) => MY-KEYWORD
+  (add-keyword 'my-keyword "foo") => MY-KEYWORD</pre></p>
+
+    <p><b>Side Effects:</b></p>
+    <p>
+      <i>keyword</i> is registered for keyword expansion.
+    </p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#remove-keyword">remove-keyword</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      The keyword expander compares keywords in a case insensitive fashion. So "FOO" and
+      "foo" are equivalent.
+    </p>
+
+    <hr>
+    <p><a id="remove-keyword"><i>Function</i> <b>REMOVE-KEYWORD</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>remove-keyword</b> <i>keyword</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>keyword</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+      <p><i>result</i>---the <a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_t.htm#t">T</a> on successful removal. <a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_n.htm#nil">NIL</a> otherwise.
+    </p>
+
+    <p><b>Description:</b> None.</p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (remove-keyword "foo") => T
+  (remove-keyword "foo") => NIL</pre></p>
+
+    <p><b>Side Effects:</b></p>
+    <p>
+      <i>keyword</i> is no longer expanded by the keyword expander.
+    </p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#add-keyword">add-keyword</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      The keyword expander compares keywords in a case insensitive fashion. So "FOO" and
+      "foo" are equivalent.
+    </p>
+
+    <hr>
+    <p><a id="add-keystroke-macro"><i>Function</i> <b>ADD-KEYSTROKE-MACRO</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>add-keystroke-macro</b> <i>function</i> <i>keystroke</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>function</i>--a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_f.htm#function_designator">function designator</a></i>.
+      <p><i>keystroke</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_k.htm#keyword">keyword</a></i>.</p>
+      <p><i>result</i>---the <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_f.htm#function_designator">function designator</a></i> for <i>keyword</i>.</p>
+    </p>
+
+    <p><b>Description:</b> None.</p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (defun my-keystroke-macro (keystroke)
+    (format t "Should expand keystroke ~S here.~%" keystroke)) => MY-KEYSTROKE-MACRO
+  (add-keystroke-macro 'my-keystroke-macro :f1) => MY-KEYSTROKE-MACRO</pre></p>
+
+    <p><b>Side Effects:</b></p>
+    <p>
+      <i>function</i> is called when <i>keystroke</i> is pressed.
+    </p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#remove-keystroke-macro">remove-keystroke-macro</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      Unlike most other functions defined here, keystrokes don't do anything by default.
+      This means that in order to achieve some user-visible result, you'll have to use
+      the lower level functions <b>print-to-world</b>, or <b>send-to-mux</b>..
+    </p>
+    <p><b>This format is likely to change very soon!</b></p>
+    <p>
+      Keystrokes, currently, are <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_k.htm#keyword">keywords</a></i> with the following format:
+      <pre>
+  keystroke := :[&lt;modifier&gt;-]*&lt;keycode&gt;
+  modifier := cmd|opt|ctrl|shift|numpad
+  keycode := &lt;fkey&gt;|character
+  fkey := f1 .. fn .. f35</pre>
+      So, hitting 8 on the number pad, while the command key is down yields the keyword: <code>:cmd-numpad-8</code>
+    </p>
+
+    <hr>
+    <p><a id="remove-keystroke-macro"><i>Function</i> <b>REMOVE-KEYSTROKE-MACRO</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>remove-keystroke-macro</b> <i>keystroke</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>keystroke</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_k.htm#keyword">keyword</a></i>.</p>
+      <p><i>result</i>---<a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_t.htm#t">T</a>, if the keystroke was previously registered, <a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_t.htm#nil">NIL</a> otherwise.</p>
+    </p>
+
+    <p><b>Description:</b> None.</p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (remove-keystroke-macro :f1) => T
+  (remove-keystroke-macro :f1) => NIL</pre></p>
+
+    <p><b>Side Effects:</b></p>
+    <p>
+      <i>keystroke</i> no longer triggers a function call.
+    </p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#add-keystroke-macro">add-keystroke-macro</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p><b>This format is likely to change very soon!</b></p>
+    <p>
+      Keystrokes, currently, are <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_k.htm#keyword">keywords</a></i> with the following format:
+      <pre>
+  keystroke := :[&lt;modifier&gt;-]*&lt;keycode&gt;
+  modifier := cmd|opt|ctrl|shift|numpad
+  keycode := &lt;fkey&gt;|character
+  fkey := f1 .. fn .. f35</pre>
+      So, hitting 8 on the number pad, while the command key is down yields the keyword: <code>:cmd-numpad-8</code>
+    </p>
+
+    <hr>
+    <p><a id="send-to-mux"><i>Function</i> <b>SEND-TO-MUX</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>send-to-mux</b> <i>world-id</i> <i>string</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>world-id</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+      <p><i>string</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      This is the low-level function to send data to the MUX server associated with
+      <i>world-id</i>. Currently, you can only send a string command, which will be
+      interpreted by the MUX directly. This may change in the future to allow for
+      attributed strings.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (send-to-mux *world* (format nil "Wauug!~%"))</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#print-to-world">print-to-world</a></b>
+      <b><a href="#set-status-buffer">set-status-buffer</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      <i>world-id</i> is available as the <code>*world*</code> special variable.
+    </p>
+
+    <hr>
+    <p><a id="print-to-world"><i>Function</i> <b>PRINT-TO-WORLD</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>print-to-world</b> <i>world-id</i> <i>arg</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>world-id</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+      <p><i>string</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      This is the low-level function to send data to the Moxie's world output view
+      associated with <i>world-id</i>. You can send either a normal string or an
+      attributed string for printing.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (print-to-world *world* (format nil "Wauug!~%"))</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#send-to-mux">send-to-mux</a></b>
+      <b><a href="#set-status-buffer">set-status-buffer</a></b>
+      <b><a href="#make-attributed-string">make-attributed-string</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      <i>world-id</i> is available as the <code>*world*</code> special variable.
+    </p>
+
+    <hr>
+    <p><a id="set-status-buffer"><i>Function</i> <b>SET-STATUS-BUFFER</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>set-status-buffer</b> <i>world-id</i> <i>string</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>world-id</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+      <p><i>string</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Sets the status buffer of the window associated with <i>world-id</i> to <i>string</i>.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (set-status-buffer *world* "Hello, world!")</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#send-to-mux">send-to-mux</a></b>
+      <b><a href="#print-to-world">print-to-world</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      <i>world-id</i> is available as the <code>*world*</code> special variable.
+    </p>
+
+    <hr>
+    <p><a id="enable-logging"><i>Function</i> <b>ENABLE-LOGGING</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>enable-logging</b> <i>world-id</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>world-id</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Enables logging for the world associated with <i>world-id</i>.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (enable-logging *world*)</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#disable-logging">disable-logging</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      <i>world-id</i> is available as the <code>*world*</code> special variable.
+    </p>
+
+    <hr>
+    <p><a id="disable-logging"><i>Function</i> <b>DISABLE-LOGGING</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>disable-logging</b> <i>world-id</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>world-id</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_o.htm#object">object</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Disables logging for the world associated with <i>world-id</i>.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (disable-logging *world*)</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#enable-logging">enable-logging</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      <i>world-id</i> is available as the <code>*world*</code> special variable.
+    </p>
+
+    <hr>
+    <p><a id="make-attributed-string"><i>Function</i> <b>MAKE-ATTRIBUTED-STRING</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>make-attributed-string</b> <i>string</i> <code>&amp;rest</code> <i>attribute*</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>string</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+      <p><i>attributes</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i>.</p>
+      <p><i>result</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Creates a string with attributes applied to it. This allows you to change various display properties of the string, such as the color, font, and style.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>
+  (make-attributed-string "Wauug!" (make-range 0 (length "Wauug!"))
+                                   (make-color 100 100 100)
+                                   (make-underline 1)) => ("Wauug!" ((:RANGE 0 6)
+							             (:COLOR 100 100 100)
+							             (:UNDERLINE 1)))</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#make-range">make-range</a></b>
+      <b><a href="#make-font">make-font</a></b>
+      <b><a href="#make-color">make-color</a></b>
+      <b><a href="#make-super">make-super</a></b>
+      <b><a href="#make-underline">make-underline</a></b>
+      <b><a href="#make-link">make-link</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      The only hook, currently, which can use attributed strings is <code>:output-from-server-hook</code>, which calls on <code>print-to-world</code> to display results. Those are the only places within Moxie to which you should be sending attributed strings.
+    </p>
+
+    <hr>
+    <p><a id="make-range"><i>Function</i> <b>MAKE-RANGE</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>make-range</b> <i>index</i> <i>length</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>index</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_b.htm#bounding_index_designator">bounding index designator</a></i>.
+      <p><i>length</i>---a non-negative <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_i.htm#integer">integer</a></i>.
+      <p><i>result</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Creates a <i>range</i> object from <i>index</i> for a <i>length</i>.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (make-range 0 (length "Wauug!")) => (:RANGE 0 6)</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#make-attributed-string">make-attributed-string</a></b>
+      <b><a href="#make-font">make-font</a></b>
+      <b><a href="#make-color">make-color</a></b>
+      <b><a href="#make-super">make-super</a></b>
+      <b><a href="#make-underline">make-underline</a></b>
+      <b><a href="#make-link">make-link</a></b>
+    </p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      This function is likely to go away in the future as the attributed string mechansism gets cleaned up.
+    </p>
+
+    <hr>
+    <p><a id="make-font"><i>Function</i> <b>MAKE-FONT</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>make-font</b> <i>name</i> <i>size</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>name</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+      <p><i>size</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/t_real.htm#real">real</a></i>.
+      </p>
+      <p><i>result</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Creates a <i>font</i> object. The font is located by <i>name</i> and is <i>size</i> points high.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (make-font "apple-monaco" 12.0) => (:FONT "apple-monaco" 12.0)</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#make-attributed-string">make-attributed-string</a></b>
+      <b><a href="#make-range">make-range</a></b>
+      <b><a href="#make-color">make-color</a></b>
+      <b><a href="#make-super">make-super</a></b>
+      <b><a href="#make-underline">make-underline</a></b>
+      <b><a href="#make-link">make-link</a></b>
+    </p>
+
+    <hr>
+    <p><a id="make-color"><i>Function</i> <b>MAKE-COLOR</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>make-color</b> <i>red-value</i> <i>green-value</i> <i>blue-value</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>red-value</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_i.htm#integer">integer</a></i> between 0 and 255.
+      <p><i>green-value</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_i.htm#integer">integer</a></i> between 0 and 255.
+      <p><i>blue-value</i>---an <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_i.htm#integer">integer</a></i> between 0 and 255.
+      <p><i>result</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Creates a <i>color</i> object with the specified values for red, green, and blue.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (make-color 100 100 100) => (:COLOR 100 100 100)</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#make-attributed-string">make-attributed-string</a></b>
+      <b><a href="#make-range">make-range</a></b>
+      <b><a href="#make-font">make-font</a></b>
+      <b><a href="#make-super">make-super</a></b>
+      <b><a href="#make-underline">make-underline</a></b>
+      <b><a href="#make-link">make-link</a></b>
+    </p>
+
+    <hr>
+    <p><a id="make-super"><i>Function</i> <b>MAKE-SUPER</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>make-super</b> <i>level</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>level</i>---a non-negative <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_i.htm#integer">integer</a></i>.
+      <p><i>result</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Creates a <i>superscript</i> attribute at the specified <i>level</i>. At level 0, the text is inline with normally attributed text, at each level above 0, the text moves higher and becomes smaller, denoting a superscript.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (make-super 1) => (:SUPER 1)</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#make-attributed-string">make-attributed-string</a></b>
+      <b><a href="#make-range">make-range</a></b>
+      <b><a href="#make-font">make-font</a></b>
+      <b><a href="#make-color">make-color</a></b>
+      <b><a href="#make-underline">make-underline</a></b>
+      <b><a href="#make-link">make-link</a></b>
+    </p>
+
+    <hr>
+    <p><a id="make-underline"><i>Function</i> <b>MAKE-UNDERLINE</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>make-underline</b> <i>level</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>level</i>---a non-negative <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_i.htm#integer">integer</a></i>.
+      <p><i>result</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Creates an <i>underline</i> attribute with <i>level</i> number of underline strokes.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (make-underline 1) => (:UNDERLINE 1)</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#make-attributed-string">make-attributed-string</a></b>
+      <b><a href="#make-range">make-range</a></b>
+      <b><a href="#make-font">make-font</a></b>
+      <b><a href="#make-color">make-color</a></b>
+      <b><a href="#make-super">make-super</a></b>
+      <b><a href="#make-link">make-link</a></b>
+    </p>
+
+    <hr>
+    <p><a id="make-link"><i>Function</i> <b>MAKE-LINK</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>make-link</b> <i>url</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>url</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+      <p><i>result</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      Creates a <i>link</i> attribute, pointing to <i>url</i>.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (make-link "http://www.spork.org/") => (:LINK "http://www.spork.org/")</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>See Also:</b></p>
+    <p>
+      <b><a href="#make-attributed-string">make-attributed-string</a></b>
+      <b><a href="#make-range">make-range</a></b>
+      <b><a href="#make-font">make-font</a></b>
+      <b><a href="#make-color">make-color</a></b>
+      <b><a href="#make-super">make-super</a></b>
+      <b><a href="#make-underline">make-underline</a></b>
+    </p>
+
+    <hr>
+    <p><a id="escape-mux-string"><i>Function</i> <b>ESCAPE-MUX-STRING</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>escape-mux-string</b> <i>string</i> => <i>result</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>string</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+      <p><i>result</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      This function is used to create pre-formatted strings for a MUX. MUXes normally ignore sequences of white space, and error on newlines, ignoring tab markins except as their capacity for white space. You can get around this by injecting %r, %t, and %b for newlines, tab characters, and white space, respectively. This function does that for you.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>  (escape-mux-string "xyzzy plugh") => "xyzzy%bplugh"</pre></p>
+
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+
+    <p><b>Notes:</b></p>
+    <p>
+      This function may only be useful for MUSHes. If your MUX escapes strings differently than a MUSH, then you will need a new function.
+    </p>
+
+    <hr>
+    <p><a id="map-variables"><i>Function</i> <b>MAP-VARIABLES</b></a></p>
+    <p><b>Syntax:</b></p>
+    <p>
+      <b>map-variables</b> <i>string</i> <i>variable-list</i>=> <i>result-string</i>
+    </p>
+
+    <p><b>Arguments and Values:</b></p>
+    <p>
+      <p><i>string</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+      <p><i>variable-list</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_l.htm#list">list</a></i> containing the variable substitutions for <i>string</i>.
+      <p><i>result-string</i>---a <i><a href="http://www.lispworks.com/reference/HyperSpec/Body/26_glo_s.htm#string">string</a></i>.</p>
+    </p>
+
+    <p><b>Description:</b></p>
+    <p>
+      <b>map-variables</b> returns a <i>string</i> composed by substituting patterns of
+      the form $<i>number</i>$ from <i>string</i> with those places in <i>variable-list</i>.
+      So, <code>$1$</code> refers to the first position (<i>i.e., car</i>) of the list
+      <i>variable-list</i>.
+    </p>
+
+    <p><b>Examples:</b></p>
+    <p><pre>
+  (map-variables "one: $1$ two: $2$ three: $3$" '(1 2 3)) => "one: 1 two: 2 three: 3"</pre></p>
+    <p><b>Side Effects:</b> None.</p>
+
+    <p><b>Affected By:</b> None.</p>
+
+    <p><b>Exceptional Situations:</b> None</p>
+  </body>
+</html>

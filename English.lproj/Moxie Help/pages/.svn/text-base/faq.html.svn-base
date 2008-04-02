@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Frequently Asked Questions</title>
+    <meta name="generator" content="Emacs!">
+  </head>
+
+  <body>
+    <h1>Frequently Asked Questions</h1>
+    
+    <dt><strong>How do I write a trigger, alias, or macro?</strong></dt>
+    <dd>
+      <p>First of all, Moxie makes no distinction between triggers, aliases, and macros. We
+	treat all of these things in the same way: as a <a href="plugin.html">plugin</a>.</p>
+
+      <p>All plugins are written in Common Lisp, so you'll have to have some grounding in
+	Lisp to do anything serious at the moment (although I have some ideas for simpler
+	interfaces for the non-programming-minded in the future). There are a few support
+	routines included in the MOXIE <a href="lisp-glossary.html#package">package</a> to
+	simplify common plugin tasks, such as triggers and aliases.</p>
+    </dd>
+
+    <dt><strong>LISP?! Why would you do that?</strong></dt>
+    <dd>
+      <p>Because I didn't want to have to write my own language for triggers, aliases, and
+	macros. No matter how much I worked on it, I wasn't going to get the kind of
+	programmability I wanted without embedding a full programming language.
+	I also think it's something of a waste of time to learn a new language just for the
+	purpose of programming a trigger in your MUX client.
+      </p>
+      <p>I could have just used AppleScript as the language of choice, and came very
+	close to doing so a number of times, but I had too much trouble trying to get
+	AS and ObjC talking as well as I'd liked, and, frankly, I don't consider it to
+	be full-featured enough.</p>
+      <p>So I chose to embed a language. There are, theoretically, a fair number
+	of popular languages I could have embedded, however, I chose Lisp for the
+	following reasons:
+	<ul>
+	  <li>Real-time development. I feel that, in the scope of Moxie, having a fully
+	    interactive development style is extremely useful. As far as I know, this
+	    excludes PERL as a possibility.</li>
+	  <li>Lisp has been ratified by ANSI, and is one of the few languages to do so. It
+	    has a very large "library" that is standard from one lisp implementation to the
+	    next, so as long as you've found code that's "Common Lisp" you've found code that
+	    will work with Moxie.</li>
+	  <li>Lisp is the second-oldest language still in use, after FORTRAN. While not
+	    the largest consideration, it does guarantee that there's a fair amount of code
+	    available for free in the world. Emacs, for example, has a huge amount of contributed
+	    Emacs-Lisp code (which, while not common-lisp, is often easily ported).</li>
+	  <li>And finally, because I can. I like Lisp, and I'm writing Moxie, so I get to pick.
+	    "Give me real macros, or give me death!"</li>
+	</ul>
+      </p>
+    </dd>
+
+    <dt><strong>Where can I find more information on Lisp programming?</strong></dt>
+    <dd>
+      <p>There are a number of web sites devoted to Lisp programming. Below, I'll list a few
+	resources that should get you pointed in the right direction:
+	<ul>
+	  <li><a href="lisp-glossary.html#cliki">CLiki's</a>
+	    <a href="http://www.cliki.net/Online%20Tutorial" target="new">Online Tutorial</a> page
+	    can get you started if you're completely new.</li>
+	  <li><a href="http://www.paulgraham.com" target="new">Paul Graham</a> has a lot of
+	    information on Lisp, including a free book for the more serious programmers.</li>
+	</ul>
+      </p>
+    </dd>
+
+    <dt><strong>What is the REPL?</strong></dt>
+    <dd>
+      <p>The <a href="lisp-glossary.html#repl">REPL</a> is your direct
+	interface to the Lisp sub-system. It is the key to fully interactive programming. Via
+	the REPL you can input Lisp commands directly and see the results - any Lisp will work
+	here, including function definitions. This allows you to write a function, test it, and
+	debug it, all without leaving the REPL, and with a much finer grain of control than with
+	a compile cycle.</p>
+    </dd>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>moxie</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>MoxieWorld.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>application/com.kublai.Moxie</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Moxie World</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>MOXI</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>NSDocumentClass</key>
+			<string>World</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Moxie</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Moxie Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Moxie Help</string>
+	<key>CFBundleIconFile</key>
+	<string>Moxie.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.kublai.Moxie</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>MOXI</string>
+	<key>CFBundleVersion</key>
+	<string>0-dev</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

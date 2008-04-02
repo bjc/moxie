@@ -1,0 +1,37 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                showPreferencesWindow = id; 
+                showWorldSettingsWindow = id; 
+                showWorldStatusWindow = id; 
+            }; 
+            CLASS = AppDelegate; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                cycleDocumentWindows = id; 
+                orderFrontStandardAboutPanel = id; 
+                pasteWithFormatting = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = MxTransparentScrollView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {
+                showLispREPLWindow = id; 
+                showPreferencesWindow = id; 
+                showWorldSettingsWindow = id; 
+                showWorldStatusWindow = id; 
+            }; 
+            CLASS = WorldController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSDocumentController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

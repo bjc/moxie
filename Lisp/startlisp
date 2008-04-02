@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# Args are Resources, Plugins, and Framework paths.
+#
+
+topdir=`dirname $0`
+cd "$1"
+
+template="init-template.lisp"
+initfile="/tmp/moxie-init.$$.lisp"
+
+start_clisp()
+{
+    if [ ! -f "$1/base" ]; then
+        ln -s . "$1/base"
+    fi
+    "$topdir/clisp" -B "$1" -E UTF-8 -i "$initfile"
+}
+
+start_openmcl()
+{
+    CCL_DEFAULT_DIRECTORY="$1"
+    export CCL_DEFAULT_DIRECTORY
+    "$topdir/openmcl" -l "$initfile"
+}
+
+start_sbcl()
+{
+    "$topdir/sbcl" --core "$1/sbcl.core" --load "$initfile"
+}
+
+#
+# Create the init file by substituting our args for variables in
+# the template.
+#
+sed -e "s,@resources@,$1,g;s,@plugins@,$2,g;s,@framework@,$3,g" < $template > $initfile
+
+#
+# Start up a lisp with the initialization file we just created.
+#
+#start_clisp "$1"
+start_sbcl "$1"
+#start_openmcl "$1"
+
+# Remove the initfile when the lisp quits.
+#rm -f $initfile

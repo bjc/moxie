@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Plugin Lifestyle</title>
+    <meta name="generator" content="BBEdit 6.5">
+  </head>
+
+  <body>
+    <h1><a id="intro">Introduction</a></h1>
+    <h2>Or: The worlds of MUXing are varied, so why shouldn't my viewer be?</h2>
+    <p>
+      Most MUXes are built off very similar codebases and design patters, but
+      within those similar roots are an infinite and varied number of worlds.
+    </p>
+    <p>
+      In order to cope with the almost maddening variety in MUXing,
+      programmatically, you have to develop some kind of programming language.
+      For instance, TinyFugue's trigger's are a simple programming language.
+    </p>
+    <p>
+      So, to allow for the largest amount of flexibility in Moxie, Moxie
+      includes a full programming language. While inventing one specifically
+      for Moxie would certainly be the norm, it is not something that should
+      be valued highly. In fact, by using a standard language, you get a lot
+      of benefits of useably free code-base.
+    </p>
+    <p>
+      So, Moxie includes an <a href="http://clisp.cons.org/">embedded lisp
+      interpreter</a>. This gives you the full power of the Lisp language from
+      within your plugin code. What kind of things you write, and how you want to
+      interact with Moxie and your MUX are limited only by your imagination.
+    </p>
+    <p>
+      This does mean you'll have to learn Lisp - at least a little - in order
+      to write any plugins for Moxie, although I will endeavour to keep things
+      as simple as possible throughout this document.
+    </p>
+
+    <h1><a id="quickstart">Quick Start</a></h1>
+    <h2>Or: Just Gimme the Code, and I'll Come Back When I Need You.</h2>
+    <p>
+      The simplest plugins are keyword expansions: when you type
+      "/foobar baz" into Moxie, it will try to trigger keyword expansion for
+      the keyword "foobar".
+    </p>
+    <p>
+      To register a keyword expander, you first have to write the code
+      for the expander, then register it with the keyword expansion hook.
+      all the functions referenced here are exported from the MOXIE
+      <a href="lisp-glossary.html#package">package</a>.
+    </p>
+    <p>
+      First, we'll create a package for our test plugin, and use the moxie
+      <a href="lisp-glossary.html#package">package</a>, as well as the
+      <a href="lisp-glossary.html#bjc-utils">bjc-utils</a> package.
+    </p>
+    <pre>
+      (defpackage test-plugin
+        (:use :cl :cl-user :moxie :bjc-utils))
+      (in-package :test-plugin)
+    </pre>
+    <p>
+      Then we define our expander function. We just want to take a name off
+      of the argument line, and page them with "hello!". For the sake of
+      debugging, we also want to print out what we got as the argument
+      to the lisp <a href="lisp-glossary.html#repl">REPL</a>:
+    </p>
+    <pre>
+      (defun foobar-handler (string)
+        (format t "foobar-handler got: ~A~%" string)
+        (map-variables "page $1$ = hello!"
+                       (split string #\Space)))
+    </pre>
+    <p>
+      The function we've defined returns the string from the map-variables
+      command. This return value is what's sent to the MUX. If we don't want
+      to send anything to the MUX you can return an empty string ("") or
+      nil.
+    </p>
+    <p>
+      Now that we have the function defined, we want to register it with
+      the keyword expansion hook:
+    </p>
+    <pre>
+      (add-keyword 'foobar-handler "foobar")
+    </pre>
+    <p>
+      To test this, first bring up the REPL window so we can see what's
+      being printed out by the function as it runs. To do this, select
+      "Lisp REPL" from the "Window" menu.
+    </p>
+    <p>
+      Now, in Moxie, type "/foobar me", and, assuming you're connected
+      to a MUX, you should get a page from yourself saying, "hello!".
+      In the REPL window, however, you'll see:
+    </p>
+    <pre>
+      foobar-handler got: me
+    </pre>
+    <p>
+      Which means the handler received the string "me" as the argument
+      string.
+    </p>
+    <p>
+      If you're curious how the functions map-variables and split work,
+      in the REPL, type "(documentation 'map-variables 'function)" to view
+      their documentation.
+    </p>
+    <p>
+      There are other pre-defined triggers that work in a similar fashion.
+      There is a list of them in the moxie.lisp file in the
+      <a href="#app-source">resources directory</a>.
+    </p>
+
+    <h1><a id="app-predefs">Appendix: Pre-defined variables and triggers</a></h1>
+    <p>
+      Moxie uses a set of pre-defined symbols to communicate with the lisp
+      sub-system. Below is a table of symbols, what type they are, and what
+      they do.
+    </p>
+    <table border=1>
+      <tr>
+	<td>Name</td>
+	<td>Type</td>
+	<td>Description</td>
+      </tr>
+      <tr>
+	<td>moxie::*moxie-result-stream*</td>
+	<td>stream</td>
+	<td>The stream for communicating with Moxie.</td>
+      </tr>
+      <tr>
+	<td>moxie::*world*</td>
+	<td>object</td>
+	<td>The currently active world-id. This may be 0, if a world hasn't called into
+	the plugin system.</td>
+      </tr>
+      <tr>
+	<td>moxie::eval-hook</td>
+	<td>function</td>
+	<td>Used by Moxie to send data from the REPL window to the
+	  lisp plugin system.</td>
+      </tr>
+      <tr>
+	<td>moxie::input-to-server-hook</td>
+	<td>function</td>
+	<td>Used by Moxie to send data to the lisp plugins after receiving
+	  something from the input line.</td>
+      </tr>
+      <tr>
+	<td>moxie::output-from-server-hook</td>
+	<td>function</td>
+	<td>Used by Moxie when data is received from the MUX for display
+	  on the screen.</td>
+      </tr>
+      <tr>
+	<td>moxie::keystroke-hook</td>
+	<td>function</td>
+	<td>Used by Moxie when a registered keystroke is pressed to call into its
+	function</td>
+      </tr>
+      <tr>
+	<td>moxie::world-opened-hook</td>
+	<td>function</td>
+	<td>Used by Moxie to tell the plugin system a new world has opened.</td>
+      </tr>
+      <tr>
+	<td>moxie::world-closed-hook</td>
+	<td>function</td>
+	<td>Used by Moxie to tell the plugin system a world has closed.</td>
+      </tr>
+      <tr>
+	<td>moxie::start-logging-hook</td>
+	<td>function</td>
+	<td>Used by Moxie to tell the plugin system it wishes to log transcripts.</td>
+      </tr>
+      <tr>
+	<td>moxie::stop-logging-hook</td>
+	<td>function</td>
+	<td>Used by Moxie to tell the plugin system it no longer wishes to log.</td>
+      </tr>
+    </table>
+
+    <h1><a id="app-source">Appendix: Sample source code</a></h1>
+    <p>
+      You can find definitions for all the built in functions in the Application
+      bundle: <code>Contents/Resources/*.lisp</code>. The file <code>startlisp</code>
+      parses the file <code>init-template.lisp</code> and starts the lisp with the parsed
+      file, loading the rest of the plug in system with it.
+    </p>
+    <p>
+      There are certain hooks in <code>tpl.lisp</code> which the application calls. You
+      can have a look at them, and even change them if you want, but don't
+      rename them or Moxie won't work anymore.
+    </p>
+    <p>
+      Also included in the Application Plug-Ins directory are a few pre-supplied plug ins
+      which you can use as an example. This includes the default logger, numpad movement macros,
+      and ANSI color support.
+    </p>
+  </body>
+</html

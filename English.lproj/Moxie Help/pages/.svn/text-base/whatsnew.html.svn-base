@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="en">
+  <head>
+    <title>What's New</title>
+    <meta name="generator" content="Emacs!">
+  </head>
+
+  <body>
+    <h1>What's new</h1>
+    <h3>Since 0.4</h3>
+    <ul>
+      <li>A timer hook now fires every second. You can attach to it by adding
+	a function to <code>:timer-hook</code>.</li>
+      <li>Telnet DONT and WONT are handled properly now.</li>
+      <li>The lisp image includes ASDF and CL-PPCRE, so startup times should be faster
+        if you use CL-PPCRE in your plugins.</li>
+    </ul>
+
+    <h3>Since 0.3</h3>
+    <ul>
+      <li>ANSI color support is now supplied via a built-in plug in.</li>
+      <li>You can send a lone enter key press.</li>
+      <li>Telnet protocol support.</li>
+      <li>You can clear your screen from the plug in interface now. For convenience,
+        the command "/clear" will clear your screen, as well as the <code>clear</code>
+	key on the numeric keypad.</li>
+      <li>Numpad keybindings have been added via a plug in.</li>
+      <li>Hooks use the results of the previous hook in a mode if applicable now, to
+        allow for multiple levels of filter feeding off of each other. This does complicate
+        things a little more, but it also allows hooks to play nice with each other.</li>
+      <li>Hooks no longer set arbitrary keywords. Those have been replaced by special
+	variables which will do the right thing, and greatly simplify plugin code.</li>
+      <li>Attributed strings changed. You can now set multiple attributes across multiple
+	ranges of the string.</li>
+    </ul>
+
+    <h3>Since 0.2:</h3>
+    <ul>
+      <li>Moxie now scans for plugins in ~/Library/Moxie, and the usual variations
+	thereof for Network, Local, and System directories.</li>
+      <li>There's a new package, CLHS-LOOKUP, which will lookup symbols in the CLHS.</li>
+      <li>The world view is no longer cleared when reconnecting.</li>
+      <li>Lisp is now initialized at startup time.</li>
+      <li>The Lisp system is no longer embedded. You can use any CL system you wish
+	now. The communications channels have become asynchronous, as well. The lisp
+	system should never hang Moxie again, although it is still required for its
+        functioning. You can now also use the built-in debugging features of whichever
+        lisp you choose.</li>
+      <li>CLISP is now included as the default lisp implementation. You can get more
+	information on CLISP at <a href="http://clisp.cons.org/">the website.</a></li>
+      <li>Logging has been moved into a plugin. You can now enable and disable it
+	from within plugins, and for convenience, the command "/log [filename]" in
+	a Moxie window will enable logging to FILENAME, if it exists, otherwise it
+	will toggle logging to the current log file.</li>
+      <li>The plug in system now defines "keystroke macros" which run when individual
+	keys are pressed. See the plug in documentation for further details.</li>
+      <li>Logging can be enabled and disabled from the plug in system.</li>
+      <li>The status buffer (the text field next to the lag indicator) can now
+	be set from the plug in system.</li>
+      <li>World-local variables are now available in the plug in system via the
+	<code>world-var</code> function. These variables differ depending upon
+        which world is calling into the plug in, and can be used to keep state
+        information. See the plug in documentation for further information.</li>
+      <li>CL-PPCRE moved into the PlugIns directory.</li>
+      <li>Plug in documentation updated for all exported functions.</li>
+    </ul>
+
+    <h3>Since 0.1:</h3>
+    <ul>
+      <li>Plugin System is here. The plugins are written in Lisp thanks to
+	<a href="http://ecls.sourceforge.net/" target="new">ECL.</a>
+	<a href="http://www.cliki.net/asdf" target="new">ASDF</a> and
+	<a href="http://www.cliki.net/cl-ppcre" target="new">CL-PPCRE</a> are
+	also included. See the help file for details.</li>
+
+      <li>Help is now available in the standard place. It's pretty empty at
+	the moment, but includes some pointers on how to get started with the
+	plugin system. There is also a sample plugin provided in the application
+        bundle, in the "PlugIns" directory.</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {openLogDirectory = id; saveSettingsAsDefault = id; }; 
+            CLASS = WorldSettingsController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                theHostSettingsTab = NSTabViewItem; 
+                theSettingsController = NSObjectController; 
+                theTabView = NSTabView; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,18 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = LispREPLController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theTextView = NSTextView; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            CLASS = ScrollingTextView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theResponder = NSResponder; }; 
+            SUPERCLASS = NSTextView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

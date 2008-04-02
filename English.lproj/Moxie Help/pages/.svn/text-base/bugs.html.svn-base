@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Known Bugs</title>
+    <meta name="generator" content="Emacs!">
+  </head>
+
+  <body>
+    <h1>Known Bugs</h1>
+    <ul>
+      <li>The world selector will not raise the window you select if it's already the frontmost
+        Moxie window, even if Moxie is in the background (it comes next-to-top, for reasons I don't
+        at all understand).</li>
+      <li>Fonts get screwed up fairly frequently, especially when trying to set them via the font panel.</li>
+      <li>The "Choose" button for choosing the REPL font doesn't work at all.</li>
+      <li>Reading from standard-input in Lisp will hang Moxie.</li>
+    </ul>
+  </body>
+</html>

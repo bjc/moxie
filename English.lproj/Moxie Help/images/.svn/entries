@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="20"
+   name=""
+   committed-date="2005-12-27T15:21:23.068810Z"
+   url="svn+ssh://coleridge/svn/Moxie/trunk/English.lproj/Moxie%20Help/images"
+   last-author="bjc"
+   kind="dir"
+   uuid="2641c99b-6c07-0410-920d-927397d2d5d0"
+   revision="47"/>
+<entry
+   committed-rev="20"
+   name="Moxie.png"
+   text-time="2005-12-23T23:28:45.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="45ffa9775ecaedde832f59f85aff823c"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:54.000000Z"/>
+<entry
+   committed-rev="20"
+   name="Moxie_small.png"
+   text-time="2005-12-23T23:28:45.000000Z"
+   committed-date="2005-12-27T15:21:23.068810Z"
+   checksum="e569cf86d6902f830a70515f77d85d05"
+   last-author="bjc"
+   kind="file"
+   prop-time="2005-12-27T01:33:54.000000Z"/>
+</wc-entries>

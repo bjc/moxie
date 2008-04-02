@@ -1,0 +1,12 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = WorldStatusController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theTableView = NSTableView; }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

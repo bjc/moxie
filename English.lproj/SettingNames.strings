@@ -1,0 +1,10 @@
+/* Used for the undo menu. */
+
+hostname = "Hostname";
+port = "Port";
+connectOnOpen = "Connect on Open";
+characterName = "Character Name";
+textColor = "Foreground Color";
+backgroundColor = "Background Color";
+font = "Font";
+loggingEnabled = "Logging Enabled";

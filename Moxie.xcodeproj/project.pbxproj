@@ -1,0 +1,876 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		280FE68806C7533F00AA47DF /* LispREPL.nib in Resources */ = {isa = PBXBuildFile; fileRef = 280FE68706C7533F00AA47DF /* LispREPL.nib */; };
+		280FE69106C8241600AA47DF /* LispREPLController.h in Headers */ = {isa = PBXBuildFile; fileRef = 280FE68F06C8241600AA47DF /* LispREPLController.h */; };
+		280FE69206C8241600AA47DF /* LispREPLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280FE69006C8241600AA47DF /* LispREPLController.m */; };
+		28212A6005A6CEF600BEF07C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28212A5F05A6CEF600BEF07C /* Security.framework */; };
+		2825D1AF05BE3ED300A9958B /* SettingNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2825D1AE05BE3ED300A9958B /* SettingNames.strings */; };
+		2827172606DAFDE200D3A4C2 /* NSAttributedString+Moxie.h in Headers */ = {isa = PBXBuildFile; fileRef = 2827172406DAFDE200D3A4C2 /* NSAttributedString+Moxie.h */; };
+		2827172706DAFDE200D3A4C2 /* NSAttributedString+Moxie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827172506DAFDE200D3A4C2 /* NSAttributedString+Moxie.m */; };
+		282B3E3305A3F8E300A3D04F /* MxWorldSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 282B3E3105A3F8E300A3D04F /* MxWorldSettings.h */; };
+		282B3E3405A3F8E300A3D04F /* MxWorldSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 282B3E3205A3F8E300A3D04F /* MxWorldSettings.m */; };
+		28360F9B05A7CE3300841A1E /* WorldSelector.nib in Resources */ = {isa = PBXBuildFile; fileRef = 28360F9905A7CE3300841A1E /* WorldSelector.nib */; };
+		28360F9E05A7CEB100841A1E /* WorldStatusController.h in Headers */ = {isa = PBXBuildFile; fileRef = 28360F9C05A7CEB100841A1E /* WorldStatusController.h */; };
+		28360F9F05A7CEB100841A1E /* WorldStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28360F9D05A7CEB100841A1E /* WorldStatusController.m */; };
+		28396EFB05A444D000CE84B6 /* NSException+LiDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 28396EFA05A444D000CE84B6 /* NSException+LiDebugging.m */; };
+		28406A1605D0DDB4008DEAD7 /* MoxieWorld.icns in Resources */ = {isa = PBXBuildFile; fileRef = 28406A1505D0DDB4008DEAD7 /* MoxieWorld.icns */; };
+		284755F106CF0EF90078110F /* LispREPL.h in Headers */ = {isa = PBXBuildFile; fileRef = 284755EF06CF0EF90078110F /* LispREPL.h */; };
+		284755F206CF0EF90078110F /* LispREPL.m in Sources */ = {isa = PBXBuildFile; fileRef = 284755F006CF0EF90078110F /* LispREPL.m */; };
+		2857BB5E05BAA0F00053FE42 /* World.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2857BB5D05BAA0F00053FE42 /* World.nib */; };
+		2857BB6005BAA0FB0053FE42 /* Preferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2857BB5F05BAA0FB0053FE42 /* Preferences.nib */; };
+		285A42D70965F35400597D37 /* Ansi-Color.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42BD0965F31400597D37 /* Ansi-Color.lisp */; };
+		285A42D80965F35400597D37 /* Idle-Monster.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42BE0965F31400597D37 /* Idle-Monster.lisp */; };
+		285A42D90965F35400597D37 /* Logger.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42BF0965F31400597D37 /* Logger.lisp */; };
+		285A42DA0965F35400597D37 /* MXP.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42C00965F31400597D37 /* MXP.lisp */; };
+		285A42DB0965F35400597D37 /* Numpad-Movement.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42C10965F31400597D37 /* Numpad-Movement.lisp */; };
+		285A42DC0965F35400597D37 /* Sample-Plugin.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42C20965F31400597D37 /* Sample-Plugin.lisp */; };
+		285A42DD0965F35400597D37 /* Telnet.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42C30965F31400597D37 /* Telnet.lisp */; };
+		285A4408096614D100597D37 /* init-template.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A4405096614D100597D37 /* init-template.lisp */; };
+		285A44900966156A00597D37 /* lisp.run in Resources */ = {isa = PBXBuildFile; fileRef = 285A448C0966156A00597D37 /* lisp.run */; };
+		285A44BC096615B700597D37 /* clhs-lookup.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44A2096615B700597D37 /* clhs-lookup.lisp */; };
+		285A44BD096615B700597D37 /* compat-clisp.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44A4096615B700597D37 /* compat-clisp.lisp */; };
+		285A44BE096615B700597D37 /* compat-openmcl.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44A5096615B700597D37 /* compat-openmcl.lisp */; };
+		285A44C0096615B700597D37 /* compat-sbcl.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44A7096615B700597D37 /* compat-sbcl.lisp */; };
+		285A44C3096615B700597D37 /* default.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44AA096615B700597D37 /* default.lisp */; };
+		285A44C4096615B700597D37 /* hooks.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44AB096615B700597D37 /* hooks.lisp */; };
+		285A44C5096615B700597D37 /* Map_Sym.txt in Resources */ = {isa = PBXBuildFile; fileRef = 285A44AC096615B700597D37 /* Map_Sym.txt */; };
+		285A44C6096615B700597D37 /* Mop_Sym.txt in Resources */ = {isa = PBXBuildFile; fileRef = 285A44AD096615B700597D37 /* Mop_Sym.txt */; };
+		285A44C7096615B700597D37 /* moxie.asd in Resources */ = {isa = PBXBuildFile; fileRef = 285A44AE096615B700597D37 /* moxie.asd */; };
+		285A44C9096615B700597D37 /* moxie.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44B0096615B700597D37 /* moxie.lisp */; };
+		285A44CB096615B700597D37 /* package.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44B2096615B700597D37 /* package.lisp */; };
+		285A44D0096615B700597D37 /* bjc-utils.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44B8096615B700597D37 /* bjc-utils.lisp */; };
+		285A44D3096615B700597D37 /* world.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44BB096615B700597D37 /* world.lisp */; };
+		285A45970966171D00597D37 /* startlisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A4404096614D000597D37 /* startlisp */; };
+		285A45980966172600597D37 /* openmcl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A44990966157F00597D37 /* openmcl */; };
+		285A45990966173400597D37 /* clisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A448E0966156A00597D37 /* clisp */; };
+		2861E88A09674C62002A271F /* repl.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 2861E88909674C62002A271F /* repl.lisp */; };
+		2861E9E20967A48A002A271F /* save-moxie-image.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 2861E9E00967A48A002A271F /* save-moxie-image.lisp */; };
+		2861E9E30967A48A002A271F /* sbcl.core in Resources */ = {isa = PBXBuildFile; fileRef = 2861E9E10967A48A002A271F /* sbcl.core */; };
+		2861E9EB0967A5E4002A271F /* sbcl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2861E9E80967A4F4002A271F /* sbcl */; };
+		286C3B5E070A4B8900B6E2B1 /* NSNumber+LispExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 286C3B5C070A4B8900B6E2B1 /* NSNumber+LispExtensions.h */; };
+		286C3B5F070A4B8900B6E2B1 /* NSNumber+LispExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C3B5D070A4B8900B6E2B1 /* NSNumber+LispExtensions.m */; };
+		286D8C1605A4099100D7C2A2 /* WorldSettingsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 286D8C1405A4099100D7C2A2 /* WorldSettingsController.h */; };
+		286D8C1705A4099100D7C2A2 /* WorldSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286D8C1505A4099100D7C2A2 /* WorldSettingsController.m */; };
+		288A4F1A05A13FBD004C4480 /* ScrollingTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 288A4F1805A13FBD004C4480 /* ScrollingTextView.h */; };
+		288A4F1B05A13FBD004C4480 /* ScrollingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 288A4F1905A13FBD004C4480 /* ScrollingTextView.m */; };
+		288D8A7105AD21A10058CC79 /* WorldSettings.nib in Resources */ = {isa = PBXBuildFile; fileRef = 288D8A7005AD21A10058CC79 /* WorldSettings.nib */; };
+		289962A605B67ADF00ADBE42 /* NSUserDefaults+Moxie.h in Headers */ = {isa = PBXBuildFile; fileRef = 289962A405B67ADF00ADBE42 /* NSUserDefaults+Moxie.h */; };
+		289962A705B67ADF00ADBE42 /* NSUserDefaults+Moxie.m in Sources */ = {isa = PBXBuildFile; fileRef = 289962A505B67ADF00ADBE42 /* NSUserDefaults+Moxie.m */; };
+		28A2E1DD096985710005CC4E /* dppccl in Resources */ = {isa = PBXBuildFile; fileRef = 28A2E1DB096985710005CC4E /* dppccl */; };
+		28A2E1DE096985710005CC4E /* dppccl.image in Resources */ = {isa = PBXBuildFile; fileRef = 28A2E1DC096985710005CC4E /* dppccl.image */; };
+		28B9CF3005BA185800A72136 /* WorldController.h in Headers */ = {isa = PBXBuildFile; fileRef = 28B9CF2E05BA185800A72136 /* WorldController.h */; };
+		28B9CF3105BA185800A72136 /* WorldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CF2F05BA185800A72136 /* WorldController.m */; };
+		28C36FBD05BFCB3000BAA9B7 /* Moxie.icns in Resources */ = {isa = PBXBuildFile; fileRef = 28C36FBC05BFCB3000BAA9B7 /* Moxie.icns */; };
+		28C6947C06F55DC000341CDE /* NSDictionary+LispExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 28C6947A06F55DC000341CDE /* NSDictionary+LispExtensions.h */; };
+		28C6947D06F55DC000341CDE /* NSDictionary+LispExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6947B06F55DC000341CDE /* NSDictionary+LispExtensions.m */; };
+		28CDC68E06D0E4BB00D3A886 /* Moxie Help in Resources */ = {isa = PBXBuildFile; fileRef = 28CDC68D06D0E4BB00D3A886 /* Moxie Help */; };
+		28D8059F06E9B04C002B3FAF /* NSString+LispExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 28D8059D06E9B04C002B3FAF /* NSString+LispExtensions.h */; };
+		28D805A006E9B04C002B3FAF /* NSString+LispExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D8059E06E9B04C002B3FAF /* NSString+LispExtensions.m */; };
+		28D925D505B7B09100CC250A /* PreferencesController.h in Headers */ = {isa = PBXBuildFile; fileRef = 28D925D305B7B09100CC250A /* PreferencesController.h */; };
+		28D925D605B7B09100CC250A /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D925D405B7B09100CC250A /* PreferencesController.m */; };
+		28F9039C06EE45AF00D5ADA9 /* NSArray+LispExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F9039A06EE45AF00D5ADA9 /* NSArray+LispExtensions.h */; };
+		28F9039D06EE45AF00D5ADA9 /* NSArray+LispExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F9039B06EE45AF00D5ADA9 /* NSArray+LispExtensions.m */; };
+		28F903A406EE490C00D5ADA9 /* LispSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F903A206EE490C00D5ADA9 /* LispSymbol.h */; };
+		28F903A506EE490C00D5ADA9 /* LispSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F903A306EE490C00D5ADA9 /* LispSymbol.m */; };
+		28F9046E06F2305300D5ADA9 /* NSFileHandle+LispExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F9046C06F2305300D5ADA9 /* NSFileHandle+LispExtensions.h */; };
+		28F9046F06F2305300D5ADA9 /* NSFileHandle+LispExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F9046D06F2305300D5ADA9 /* NSFileHandle+LispExtensions.m */; };
+		8D15AC290486D014006FF6A4 /* Moxie_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF750370BD2300C91783 /* Moxie_Prefix.pch */; };
+		8D15AC2A0486D014006FF6A4 /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* World.h */; };
+		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
+		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
+		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
+		8D15AC310486D014006FF6A4 /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* World.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		285A45950966170B00597D37 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				2861E9EB0967A5E4002A271F /* sbcl in CopyFiles */,
+				285A45970966171D00597D37 /* startlisp in CopyFiles */,
+				285A45980966172600597D37 /* openmcl in CopyFiles */,
+				285A45990966173400597D37 /* clisp in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28986CC9095E4CB700B5DC99 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				285A42D70965F35400597D37 /* Ansi-Color.lisp in CopyFiles */,
+				285A42D80965F35400597D37 /* Idle-Monster.lisp in CopyFiles */,
+				285A42D90965F35400597D37 /* Logger.lisp in CopyFiles */,
+				285A42DA0965F35400597D37 /* MXP.lisp in CopyFiles */,
+				285A42DB0965F35400597D37 /* Numpad-Movement.lisp in CopyFiles */,
+				285A42DC0965F35400597D37 /* Sample-Plugin.lisp in CopyFiles */,
+				285A42DD0965F35400597D37 /* Telnet.lisp in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		280FE67F06C7533400AA47DF /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/LispREPL.nib; sourceTree = "<group>"; };
+		280FE68F06C8241600AA47DF /* LispREPLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LispREPLController.h; sourceTree = "<group>"; };
+		280FE69006C8241600AA47DF /* LispREPLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LispREPLController.m; sourceTree = "<group>"; };
+		28212A5F05A6CEF600BEF07C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		2827172406DAFDE200D3A4C2 /* NSAttributedString+Moxie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Moxie.h"; sourceTree = "<group>"; };
+		2827172506DAFDE200D3A4C2 /* NSAttributedString+Moxie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Moxie.m"; sourceTree = "<group>"; };
+		282B3E3105A3F8E300A3D04F /* MxWorldSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxWorldSettings.h; sourceTree = "<group>"; };
+		282B3E3205A3F8E300A3D04F /* MxWorldSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxWorldSettings.m; sourceTree = "<group>"; };
+		28360F9A05A7CE3300841A1E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/WorldSelector.nib; sourceTree = "<group>"; };
+		28360F9C05A7CEB100841A1E /* WorldStatusController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = WorldStatusController.h; sourceTree = "<group>"; };
+		28360F9D05A7CEB100841A1E /* WorldStatusController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = WorldStatusController.m; sourceTree = "<group>"; };
+		28396EFA05A444D000CE84B6 /* NSException+LiDebugging.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSException+LiDebugging.m"; sourceTree = "<group>"; };
+		28406A1505D0DDB4008DEAD7 /* MoxieWorld.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MoxieWorld.icns; sourceTree = "<group>"; };
+		284755EF06CF0EF90078110F /* LispREPL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LispREPL.h; sourceTree = "<group>"; };
+		284755F006CF0EF90078110F /* LispREPL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LispREPL.m; sourceTree = "<group>"; };
+		285A42BD0965F31400597D37 /* Ansi-Color.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "Ansi-Color.lisp"; sourceTree = "<group>"; };
+		285A42BE0965F31400597D37 /* Idle-Monster.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "Idle-Monster.lisp"; sourceTree = "<group>"; };
+		285A42BF0965F31400597D37 /* Logger.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Logger.lisp; sourceTree = "<group>"; };
+		285A42C00965F31400597D37 /* MXP.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = MXP.lisp; sourceTree = "<group>"; };
+		285A42C10965F31400597D37 /* Numpad-Movement.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "Numpad-Movement.lisp"; sourceTree = "<group>"; };
+		285A42C20965F31400597D37 /* Sample-Plugin.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "Sample-Plugin.lisp"; sourceTree = "<group>"; };
+		285A42C30965F31400597D37 /* Telnet.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Telnet.lisp; sourceTree = "<group>"; };
+		285A4404096614D000597D37 /* startlisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = startlisp; sourceTree = "<group>"; };
+		285A4405096614D100597D37 /* init-template.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "init-template.lisp"; sourceTree = "<group>"; };
+		285A4406096614D100597D37 /* build-lisp-image.sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = "build-lisp-image.sh"; sourceTree = "<group>"; };
+		285A445B0966152600597D37 /* asdf */ = {isa = PBXFileReference; lastKnownFileType = folder; path = asdf; sourceTree = "<group>"; };
+		285A448C0966156A00597D37 /* lisp.run */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = lisp.run; sourceTree = "<group>"; };
+		285A448D0966156A00597D37 /* lispinit.mem */ = {isa = PBXFileReference; lastKnownFileType = file; path = lispinit.mem; sourceTree = "<group>"; };
+		285A448E0966156A00597D37 /* clisp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = clisp; sourceTree = "<group>"; };
+		285A448F0966156A00597D37 /* save-moxie-image.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "save-moxie-image.lisp"; sourceTree = "<group>"; };
+		285A44990966157F00597D37 /* openmcl */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = openmcl; sourceTree = "<group>"; };
+		285A449A0966157F00597D37 /* save-moxie-image.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "save-moxie-image.lisp"; sourceTree = "<group>"; };
+		285A44A2096615B700597D37 /* clhs-lookup.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "clhs-lookup.lisp"; sourceTree = "<group>"; };
+		285A44A4096615B700597D37 /* compat-clisp.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "compat-clisp.lisp"; sourceTree = "<group>"; };
+		285A44A5096615B700597D37 /* compat-openmcl.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "compat-openmcl.lisp"; sourceTree = "<group>"; };
+		285A44A6096615B700597D37 /* compat-sbcl.fasl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "compat-sbcl.fasl"; sourceTree = "<group>"; };
+		285A44A7096615B700597D37 /* compat-sbcl.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "compat-sbcl.lisp"; sourceTree = "<group>"; };
+		285A44A8096615B700597D37 /* semantic.cache */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = semantic.cache; sourceTree = "<group>"; };
+		285A44AA096615B700597D37 /* default.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = default.lisp; sourceTree = "<group>"; };
+		285A44AB096615B700597D37 /* hooks.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = hooks.lisp; sourceTree = "<group>"; };
+		285A44AC096615B700597D37 /* Map_Sym.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Map_Sym.txt; sourceTree = "<group>"; };
+		285A44AD096615B700597D37 /* Mop_Sym.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Mop_Sym.txt; sourceTree = "<group>"; };
+		285A44AE096615B700597D37 /* moxie.asd */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = moxie.asd; sourceTree = "<group>"; };
+		285A44B0096615B700597D37 /* moxie.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = moxie.lisp; sourceTree = "<group>"; };
+		285A44B2096615B700597D37 /* package.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = package.lisp; sourceTree = "<group>"; };
+		285A44B7096615B700597D37 /* bjc-utils.fasl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bjc-utils.fasl"; sourceTree = "<group>"; };
+		285A44B8096615B700597D37 /* bjc-utils.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "bjc-utils.lisp"; sourceTree = "<group>"; };
+		285A44B9096615B700597D37 /* semantic.cache */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = semantic.cache; sourceTree = "<group>"; };
+		285A44BB096615B700597D37 /* world.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = world.lisp; sourceTree = "<group>"; };
+		2861E88909674C62002A271F /* repl.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = repl.lisp; sourceTree = "<group>"; };
+		2861E9E00967A48A002A271F /* save-moxie-image.lisp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "save-moxie-image.lisp"; sourceTree = "<group>"; };
+		2861E9E10967A48A002A271F /* sbcl.core */ = {isa = PBXFileReference; lastKnownFileType = file; path = sbcl.core; sourceTree = "<group>"; };
+		2861E9E80967A4F4002A271F /* sbcl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = sbcl; sourceTree = "<group>"; };
+		286C3B5C070A4B8900B6E2B1 /* NSNumber+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+LispExtensions.h"; sourceTree = "<group>"; };
+		286C3B5D070A4B8900B6E2B1 /* NSNumber+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+LispExtensions.m"; sourceTree = "<group>"; };
+		286D8C1405A4099100D7C2A2 /* WorldSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldSettingsController.h; sourceTree = "<group>"; };
+		286D8C1505A4099100D7C2A2 /* WorldSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldSettingsController.m; sourceTree = "<group>"; };
+		286FE9F205BE3B9E005A01FF /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/SettingNames.strings; sourceTree = "<group>"; };
+		288A4EFA05A12FDE004C4480 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/WorldSettings.nib; sourceTree = "<group>"; };
+		288A4F1805A13FBD004C4480 /* ScrollingTextView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ScrollingTextView.h; sourceTree = "<group>"; };
+		288A4F1905A13FBD004C4480 /* ScrollingTextView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ScrollingTextView.m; sourceTree = "<group>"; };
+		289962A405B67ADF00ADBE42 /* NSUserDefaults+Moxie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Moxie.h"; sourceTree = "<group>"; };
+		289962A505B67ADF00ADBE42 /* NSUserDefaults+Moxie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Moxie.m"; sourceTree = "<group>"; };
+		28A0F61C05B17A4700035E74 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/World.nib; sourceTree = "<group>"; };
+		28A2E1DB096985710005CC4E /* dppccl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = dppccl; sourceTree = "<group>"; };
+		28A2E1DC096985710005CC4E /* dppccl.image */ = {isa = PBXFileReference; lastKnownFileType = file; path = dppccl.image; sourceTree = "<group>"; };
+		28B9CF2E05BA185800A72136 /* WorldController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = WorldController.h; sourceTree = "<group>"; };
+		28B9CF2F05BA185800A72136 /* WorldController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = WorldController.m; sourceTree = "<group>"; };
+		28C36FBC05BFCB3000BAA9B7 /* Moxie.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Moxie.icns; sourceTree = "<group>"; };
+		28C6947A06F55DC000341CDE /* NSDictionary+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+LispExtensions.h"; sourceTree = "<group>"; };
+		28C6947B06F55DC000341CDE /* NSDictionary+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+LispExtensions.m"; sourceTree = "<group>"; };
+		28CDC67006D0E46A00D3A886 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Moxie Help"; sourceTree = "<group>"; };
+		28D8059D06E9B04C002B3FAF /* NSString+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LispExtensions.h"; sourceTree = "<group>"; };
+		28D8059E06E9B04C002B3FAF /* NSString+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LispExtensions.m"; sourceTree = "<group>"; };
+		28D925D105B7AF5E00CC250A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Preferences.nib; sourceTree = "<group>"; };
+		28D925D305B7B09100CC250A /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		28D925D405B7B09100CC250A /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		28F9039A06EE45AF00D5ADA9 /* NSArray+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LispExtensions.h"; sourceTree = "<group>"; };
+		28F9039B06EE45AF00D5ADA9 /* NSArray+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LispExtensions.m"; sourceTree = "<group>"; };
+		28F903A206EE490C00D5ADA9 /* LispSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LispSymbol.h; sourceTree = "<group>"; };
+		28F903A306EE490C00D5ADA9 /* LispSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LispSymbol.m; sourceTree = "<group>"; };
+		28F9046C06F2305300D5ADA9 /* NSFileHandle+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+LispExtensions.h"; sourceTree = "<group>"; };
+		28F9046D06F2305300D5ADA9 /* NSFileHandle+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+LispExtensions.m"; sourceTree = "<group>"; };
+		2A37F4ACFDCFA73011CA2CEA /* World.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* World.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4B7FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32DBCF750370BD2300C91783 /* Moxie_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Moxie_Prefix.pch; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC370486D014006FF6A4 /* Moxie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moxie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D15AC330486D014006FF6A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+				28212A6005A6CEF600BEF07C /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+				28212A5F05A6CEF600BEF07C /* Security.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D15AC370486D014006FF6A4 /* Moxie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		285A42B80965F2D700597D37 /* PlugIns */ = {
+			isa = PBXGroup;
+			children = (
+				285A42BD0965F31400597D37 /* Ansi-Color.lisp */,
+				285A42BE0965F31400597D37 /* Idle-Monster.lisp */,
+				285A42BF0965F31400597D37 /* Logger.lisp */,
+				285A42C00965F31400597D37 /* MXP.lisp */,
+				285A42C10965F31400597D37 /* Numpad-Movement.lisp */,
+				285A42C20965F31400597D37 /* Sample-Plugin.lisp */,
+				285A42C30965F31400597D37 /* Telnet.lisp */,
+			);
+			path = PlugIns;
+			sourceTree = "<group>";
+		};
+		285A43F80966147F00597D37 /* Lisp */ = {
+			isa = PBXGroup;
+			children = (
+				285A44A1096615B700597D37 /* moxie */,
+				285A44960966157F00597D37 /* openmcl */,
+				2861E9DF0967A48A002A271F /* sbcl */,
+				285A448A0966156A00597D37 /* clisp */,
+				285A445B0966152600597D37 /* asdf */,
+				285A4404096614D000597D37 /* startlisp */,
+				285A4405096614D100597D37 /* init-template.lisp */,
+				285A4406096614D100597D37 /* build-lisp-image.sh */,
+			);
+			path = Lisp;
+			sourceTree = "<group>";
+		};
+		285A448A0966156A00597D37 /* clisp */ = {
+			isa = PBXGroup;
+			children = (
+				285A448B0966156A00597D37 /* base */,
+				285A448E0966156A00597D37 /* clisp */,
+				285A448F0966156A00597D37 /* save-moxie-image.lisp */,
+			);
+			path = clisp;
+			sourceTree = "<group>";
+		};
+		285A448B0966156A00597D37 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				285A448C0966156A00597D37 /* lisp.run */,
+				285A448D0966156A00597D37 /* lispinit.mem */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		285A44960966157F00597D37 /* openmcl */ = {
+			isa = PBXGroup;
+			children = (
+				28A2E1DB096985710005CC4E /* dppccl */,
+				28A2E1DC096985710005CC4E /* dppccl.image */,
+				285A44990966157F00597D37 /* openmcl */,
+				285A449A0966157F00597D37 /* save-moxie-image.lisp */,
+			);
+			path = openmcl;
+			sourceTree = "<group>";
+		};
+		285A44A1096615B700597D37 /* moxie */ = {
+			isa = PBXGroup;
+			children = (
+				285A44A3096615B700597D37 /* compat */,
+				285A44B6096615B700597D37 /* utils */,
+				285A44A2096615B700597D37 /* clhs-lookup.lisp */,
+				285A44AA096615B700597D37 /* default.lisp */,
+				285A44AB096615B700597D37 /* hooks.lisp */,
+				2861E88909674C62002A271F /* repl.lisp */,
+				285A44AC096615B700597D37 /* Map_Sym.txt */,
+				285A44AD096615B700597D37 /* Mop_Sym.txt */,
+				285A44AE096615B700597D37 /* moxie.asd */,
+				285A44B0096615B700597D37 /* moxie.lisp */,
+				285A44B2096615B700597D37 /* package.lisp */,
+				285A44BB096615B700597D37 /* world.lisp */,
+			);
+			path = moxie;
+			sourceTree = "<group>";
+		};
+		285A44A3096615B700597D37 /* compat */ = {
+			isa = PBXGroup;
+			children = (
+				285A44A4096615B700597D37 /* compat-clisp.lisp */,
+				285A44A5096615B700597D37 /* compat-openmcl.lisp */,
+				285A44A6096615B700597D37 /* compat-sbcl.fasl */,
+				285A44A7096615B700597D37 /* compat-sbcl.lisp */,
+				285A44A8096615B700597D37 /* semantic.cache */,
+			);
+			path = compat;
+			sourceTree = "<group>";
+		};
+		285A44B6096615B700597D37 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				285A44B7096615B700597D37 /* bjc-utils.fasl */,
+				285A44B8096615B700597D37 /* bjc-utils.lisp */,
+				285A44B9096615B700597D37 /* semantic.cache */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		2861E9DF0967A48A002A271F /* sbcl */ = {
+			isa = PBXGroup;
+			children = (
+				2861E9E80967A4F4002A271F /* sbcl */,
+				2861E9E10967A48A002A271F /* sbcl.core */,
+				2861E9E00967A48A002A271F /* save-moxie-image.lisp */,
+			);
+			path = sbcl;
+			sourceTree = "<group>";
+		};
+		28FA94F806D5945700E4CC31 /* Cocoa Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				28396EFA05A444D000CE84B6 /* NSException+LiDebugging.m */,
+				289962A405B67ADF00ADBE42 /* NSUserDefaults+Moxie.h */,
+				289962A505B67ADF00ADBE42 /* NSUserDefaults+Moxie.m */,
+				288A4F1805A13FBD004C4480 /* ScrollingTextView.h */,
+				288A4F1905A13FBD004C4480 /* ScrollingTextView.m */,
+				2827172406DAFDE200D3A4C2 /* NSAttributedString+Moxie.h */,
+				2827172506DAFDE200D3A4C2 /* NSAttributedString+Moxie.m */,
+				28D8059D06E9B04C002B3FAF /* NSString+LispExtensions.h */,
+				28D8059E06E9B04C002B3FAF /* NSString+LispExtensions.m */,
+				28F9039A06EE45AF00D5ADA9 /* NSArray+LispExtensions.h */,
+				28F9039B06EE45AF00D5ADA9 /* NSArray+LispExtensions.m */,
+				28F9046C06F2305300D5ADA9 /* NSFileHandle+LispExtensions.h */,
+				28F9046D06F2305300D5ADA9 /* NSFileHandle+LispExtensions.m */,
+				28C6947A06F55DC000341CDE /* NSDictionary+LispExtensions.h */,
+				28C6947B06F55DC000341CDE /* NSDictionary+LispExtensions.m */,
+				286C3B5C070A4B8900B6E2B1 /* NSNumber+LispExtensions.h */,
+				286C3B5D070A4B8900B6E2B1 /* NSNumber+LispExtensions.m */,
+			);
+			name = "Cocoa Extensions";
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* Moxie */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4ABFDCFA73011CA2CEA /* Classes */,
+				28FA94F806D5945700E4CC31 /* Cocoa Extensions */,
+				285A43F80966147F00597D37 /* Lisp */,
+				285A42B80965F2D700597D37 /* PlugIns */,
+				28CDC68D06D0E4BB00D3A886 /* Moxie Help */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				2A37F4B8FDCFA73011CA2CEA /* Resources */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = Moxie;
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				282B3E3105A3F8E300A3D04F /* MxWorldSettings.h */,
+				282B3E3205A3F8E300A3D04F /* MxWorldSettings.m */,
+				28B9CF2E05BA185800A72136 /* WorldController.h */,
+				28B9CF2F05BA185800A72136 /* WorldController.m */,
+				280FE68F06C8241600AA47DF /* LispREPLController.h */,
+				280FE69006C8241600AA47DF /* LispREPLController.m */,
+				284755EF06CF0EF90078110F /* LispREPL.h */,
+				284755F006CF0EF90078110F /* LispREPL.m */,
+				28D925D305B7B09100CC250A /* PreferencesController.h */,
+				28D925D405B7B09100CC250A /* PreferencesController.m */,
+				286D8C1405A4099100D7C2A2 /* WorldSettingsController.h */,
+				286D8C1505A4099100D7C2A2 /* WorldSettingsController.m */,
+				28360F9C05A7CEB100841A1E /* WorldStatusController.h */,
+				28360F9D05A7CEB100841A1E /* WorldStatusController.m */,
+				2A37F4AEFDCFA73011CA2CEA /* World.h */,
+				2A37F4ACFDCFA73011CA2CEA /* World.m */,
+				28F903A206EE490C00D5ADA9 /* LispSymbol.h */,
+				28F903A306EE490C00D5ADA9 /* LispSymbol.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF750370BD2300C91783 /* Moxie_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28C36FBC05BFCB3000BAA9B7 /* Moxie.icns */,
+				28406A1505D0DDB4008DEAD7 /* MoxieWorld.icns */,
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
+				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
+				2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */,
+				280FE68706C7533F00AA47DF /* LispREPL.nib */,
+				2857BB5D05BAA0F00053FE42 /* World.nib */,
+				288D8A7005AD21A10058CC79 /* WorldSettings.nib */,
+				28360F9905A7CE3300841A1E /* WorldSelector.nib */,
+				2857BB5F05BAA0FB0053FE42 /* Preferences.nib */,
+				2825D1AE05BE3ED300A9958B /* SettingNames.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D15AC280486D014006FF6A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC290486D014006FF6A4 /* Moxie_Prefix.pch in Headers */,
+				8D15AC2A0486D014006FF6A4 /* World.h in Headers */,
+				288A4F1A05A13FBD004C4480 /* ScrollingTextView.h in Headers */,
+				282B3E3305A3F8E300A3D04F /* MxWorldSettings.h in Headers */,
+				286D8C1605A4099100D7C2A2 /* WorldSettingsController.h in Headers */,
+				28360F9E05A7CEB100841A1E /* WorldStatusController.h in Headers */,
+				289962A605B67ADF00ADBE42 /* NSUserDefaults+Moxie.h in Headers */,
+				28D925D505B7B09100CC250A /* PreferencesController.h in Headers */,
+				28B9CF3005BA185800A72136 /* WorldController.h in Headers */,
+				280FE69106C8241600AA47DF /* LispREPLController.h in Headers */,
+				284755F106CF0EF90078110F /* LispREPL.h in Headers */,
+				2827172606DAFDE200D3A4C2 /* NSAttributedString+Moxie.h in Headers */,
+				28D8059F06E9B04C002B3FAF /* NSString+LispExtensions.h in Headers */,
+				28F9039C06EE45AF00D5ADA9 /* NSArray+LispExtensions.h in Headers */,
+				28F903A406EE490C00D5ADA9 /* LispSymbol.h in Headers */,
+				28F9046E06F2305300D5ADA9 /* NSFileHandle+LispExtensions.h in Headers */,
+				28C6947C06F55DC000341CDE /* NSDictionary+LispExtensions.h in Headers */,
+				286C3B5E070A4B8900B6E2B1 /* NSNumber+LispExtensions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D15AC270486D014006FF6A4 /* Moxie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 284BD82A08554DD700BAB8A9 /* Build configuration list for PBXNativeTarget "Moxie" */;
+			buildPhases = (
+				8D15AC280486D014006FF6A4 /* Headers */,
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+				283A0309071246CD00ED28E5 /* ShellScript */,
+				285A45950966170B00597D37 /* CopyFiles */,
+				8D15AC2B0486D014006FF6A4 /* Resources */,
+				28986CC9095E4CB700B5DC99 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Moxie;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Moxie;
+			productReference = 8D15AC370486D014006FF6A4 /* Moxie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 284BD82E08554DD700BAB8A9 /* Build configuration list for PBXProject "Moxie" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Moxie */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D15AC270486D014006FF6A4 /* Moxie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D15AC2B0486D014006FF6A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */,
+				8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */,
+				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
+				288D8A7105AD21A10058CC79 /* WorldSettings.nib in Resources */,
+				28360F9B05A7CE3300841A1E /* WorldSelector.nib in Resources */,
+				2857BB5E05BAA0F00053FE42 /* World.nib in Resources */,
+				2857BB6005BAA0FB0053FE42 /* Preferences.nib in Resources */,
+				2825D1AF05BE3ED300A9958B /* SettingNames.strings in Resources */,
+				28C36FBD05BFCB3000BAA9B7 /* Moxie.icns in Resources */,
+				28406A1605D0DDB4008DEAD7 /* MoxieWorld.icns in Resources */,
+				280FE68806C7533F00AA47DF /* LispREPL.nib in Resources */,
+				28CDC68E06D0E4BB00D3A886 /* Moxie Help in Resources */,
+				285A4408096614D100597D37 /* init-template.lisp in Resources */,
+				285A44900966156A00597D37 /* lisp.run in Resources */,
+				285A44BC096615B700597D37 /* clhs-lookup.lisp in Resources */,
+				285A44BD096615B700597D37 /* compat-clisp.lisp in Resources */,
+				285A44BE096615B700597D37 /* compat-openmcl.lisp in Resources */,
+				285A44C0096615B700597D37 /* compat-sbcl.lisp in Resources */,
+				285A44C3096615B700597D37 /* default.lisp in Resources */,
+				285A44C4096615B700597D37 /* hooks.lisp in Resources */,
+				285A44C5096615B700597D37 /* Map_Sym.txt in Resources */,
+				285A44C6096615B700597D37 /* Mop_Sym.txt in Resources */,
+				285A44C7096615B700597D37 /* moxie.asd in Resources */,
+				285A44C9096615B700597D37 /* moxie.lisp in Resources */,
+				285A44CB096615B700597D37 /* package.lisp in Resources */,
+				285A44D0096615B700597D37 /* bjc-utils.lisp in Resources */,
+				285A44D3096615B700597D37 /* world.lisp in Resources */,
+				2861E88A09674C62002A271F /* repl.lisp in Resources */,
+				2861E9E20967A48A002A271F /* save-moxie-image.lisp in Resources */,
+				2861E9E30967A48A002A271F /* sbcl.core in Resources */,
+				28A2E1DD096985710005CC4E /* dppccl in Resources */,
+				28A2E1DE096985710005CC4E /* dppccl.image in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		283A0309071246CD00ED28E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd Lisp\n./build-lisp-image.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D15AC300486D014006FF6A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC310486D014006FF6A4 /* World.m in Sources */,
+				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				288A4F1B05A13FBD004C4480 /* ScrollingTextView.m in Sources */,
+				282B3E3405A3F8E300A3D04F /* MxWorldSettings.m in Sources */,
+				286D8C1705A4099100D7C2A2 /* WorldSettingsController.m in Sources */,
+				28396EFB05A444D000CE84B6 /* NSException+LiDebugging.m in Sources */,
+				28360F9F05A7CEB100841A1E /* WorldStatusController.m in Sources */,
+				289962A705B67ADF00ADBE42 /* NSUserDefaults+Moxie.m in Sources */,
+				28D925D605B7B09100CC250A /* PreferencesController.m in Sources */,
+				28B9CF3105BA185800A72136 /* WorldController.m in Sources */,
+				280FE69206C8241600AA47DF /* LispREPLController.m in Sources */,
+				284755F206CF0EF90078110F /* LispREPL.m in Sources */,
+				2827172706DAFDE200D3A4C2 /* NSAttributedString+Moxie.m in Sources */,
+				28D805A006E9B04C002B3FAF /* NSString+LispExtensions.m in Sources */,
+				28F9039D06EE45AF00D5ADA9 /* NSArray+LispExtensions.m in Sources */,
+				28F903A506EE490C00D5ADA9 /* LispSymbol.m in Sources */,
+				28F9046F06F2305300D5ADA9 /* NSFileHandle+LispExtensions.m in Sources */,
+				28C6947D06F55DC000341CDE /* NSDictionary+LispExtensions.m in Sources */,
+				286C3B5F070A4B8900B6E2B1 /* NSNumber+LispExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1660FE840EACC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		280FE68706C7533F00AA47DF /* LispREPL.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				280FE67F06C7533400AA47DF /* English */,
+			);
+			name = LispREPL.nib;
+			sourceTree = "<group>";
+		};
+		2825D1AE05BE3ED300A9958B /* SettingNames.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				286FE9F205BE3B9E005A01FF /* English */,
+			);
+			name = SettingNames.strings;
+			sourceTree = "<group>";
+		};
+		28360F9905A7CE3300841A1E /* WorldSelector.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28360F9A05A7CE3300841A1E /* English */,
+			);
+			name = WorldSelector.nib;
+			sourceTree = "<group>";
+		};
+		2857BB5D05BAA0F00053FE42 /* World.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28A0F61C05B17A4700035E74 /* English */,
+			);
+			name = World.nib;
+			sourceTree = "<group>";
+		};
+		2857BB5F05BAA0FB0053FE42 /* Preferences.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28D925D105B7AF5E00CC250A /* English */,
+			);
+			name = Preferences.nib;
+			sourceTree = "<group>";
+		};
+		288D8A7005AD21A10058CC79 /* WorldSettings.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				288A4EFA05A12FDE004C4480 /* English */,
+			);
+			name = WorldSettings.nib;
+			sourceTree = "<group>";
+		};
+		28CDC68D06D0E4BB00D3A886 /* Moxie Help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28CDC67006D0E46A00D3A886 /* English */,
+			);
+			name = "Moxie Help";
+			sourceTree = "<group>";
+		};
+		2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4B7FDCFA73011CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4BAFDCFA73011CA2CEA /* English */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		284BD82B08554DD700BAB8A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_CURRENT_VERSION = "";
+				GCC_ALTIVEC_EXTENSIONS = YES;
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_CPU = "";
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Moxie_prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Moxie;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		284BD82C08554DD700BAB8A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ALTIVEC_EXTENSIONS = YES;
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Moxie_Prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
+				PRODUCT_NAME = Moxie;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		284BD82D08554DD700BAB8A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Moxie_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Moxie;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
+		284BD82F08554DD700BAB8A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ALTIVEC_EXTENSIONS = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+			};
+			name = Development;
+		};
+		284BD83008554DD700BAB8A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ALTIVEC_EXTENSIONS = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+			};
+			name = Deployment;
+		};
+		284BD83108554DD700BAB8A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ALTIVEC_EXTENSIONS = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		284BD82A08554DD700BAB8A9 /* Build configuration list for PBXNativeTarget "Moxie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284BD82B08554DD700BAB8A9 /* Development */,
+				284BD82C08554DD700BAB8A9 /* Deployment */,
+				284BD82D08554DD700BAB8A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		284BD82E08554DD700BAB8A9 /* Build configuration list for PBXProject "Moxie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284BD82F08554DD700BAB8A9 /* Development */,
+				284BD83008554DD700BAB8A9 /* Deployment */,
+				284BD83108554DD700BAB8A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}

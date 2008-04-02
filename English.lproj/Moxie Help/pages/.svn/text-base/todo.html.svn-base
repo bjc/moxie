@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="en">
+  <head>
+    <title>To Do</title>
+    <meta name="generator" content="Emacs!">
+  </head>
+
+  <body>
+    <h1>To Do</h1>
+
+    <ul>
+      <li>Parenthesis highlighting in the REPL. Programming lisp without this is a
+	complete pain for larger functions.</li>
+      <li>Create a better attributed string mechanism for Plug Ins. The current system
+	works, but is ugly.</li>
+      <li>Tab completion and indentation in the REPL.</li>
+      <li>Symbol lookup in the CLHS from the REPL.</li>
+      <li>Complete documentation.</li>
+      <li>Clean up the attributed string interface w/regards to hooks. Having to
+	conditionally extract the string is very annoying.</li>
+    </ul>
+  </body>
+</html>

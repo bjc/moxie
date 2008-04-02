@@ -1,0 +1,27 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = ScrollingTextView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theResponder = NSResponder; }; 
+            SUPERCLASS = NSTextView; 
+        }, 
+        {
+            ACTIONS = {close = id; open = id; }; 
+            CLASS = World; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                closeDelegate = id; 
+                theConnectButton = NSButton; 
+                theInputView = ScrollingTextView; 
+                theOutputView = ScrollingTextView; 
+                theProgressIndicator = NSProgressIndicator; 
+                theRoomField = NSTextField; 
+                theSplitView = NSSplitView; 
+            }; 
+            SUPERCLASS = NSDocument; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'Moxie' target in the 'Moxie' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "NSAttributedString+Moxie.h"
+    #import "NSArray+LispExtensions.h"
+    #import "NSDictionary+LispExtensions.h"
+    #import "NSFileHandle+LispExtensions.h"
+    #import "NSNumber+LispExtensions.h"
+    #import "NSString+LispExtensions.h"
+    #import "NSUserDefaults+Moxie.h"
+    #import "LispSymbol.h"
+    #import "ScrollingTextView.h"
+#endif

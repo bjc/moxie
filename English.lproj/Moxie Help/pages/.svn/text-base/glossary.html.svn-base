@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="en">
+	<head>
+		<title>
+			Glossary
+		</title>
+		<meta name="generator" content="Emacs!">
+	</head>
+
+	<body>
+		<h1>
+			Glossary
+		</h1>
+		<ul>
+			<li>
+				<dt>	<a id="mux">MUX</a>	</dt>
+				<dd>	A generic term meaning any of the variety of multi-user environments:
+				MUSH, MUD, MOO, etc.,.</dd>
+			</li>
+			<li>
+				<dt><a id="world">World</a></dt>
+				<dd>The file containing the preferences for a particular connection.</dd>
+			</li>
+		</ul>
+	</body>
+</html>
