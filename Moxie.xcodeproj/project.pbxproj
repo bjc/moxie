@@ -33,7 +33,6 @@
 		285A42DC0965F35400597D37 /* Sample-Plugin.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42C20965F31400597D37 /* Sample-Plugin.lisp */; };
 		285A42DD0965F35400597D37 /* Telnet.lisp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285A42C30965F31400597D37 /* Telnet.lisp */; };
 		285A4408096614D100597D37 /* init-template.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A4405096614D100597D37 /* init-template.lisp */; };
-		285A44900966156A00597D37 /* lisp.run in Resources */ = {isa = PBXBuildFile; fileRef = 285A448C0966156A00597D37 /* lisp.run */; };
 		285A44BC096615B700597D37 /* clhs-lookup.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44A2096615B700597D37 /* clhs-lookup.lisp */; };
 		285A44BD096615B700597D37 /* compat-clisp.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44A4096615B700597D37 /* compat-clisp.lisp */; };
 		285A44BE096615B700597D37 /* compat-openmcl.lisp in Resources */ = {isa = PBXBuildFile; fileRef = 285A44A5096615B700597D37 /* compat-openmcl.lisp */; };
@@ -64,7 +63,6 @@
 		289962A605B67ADF00ADBE42 /* NSUserDefaults+Moxie.h in Headers */ = {isa = PBXBuildFile; fileRef = 289962A405B67ADF00ADBE42 /* NSUserDefaults+Moxie.h */; };
 		289962A705B67ADF00ADBE42 /* NSUserDefaults+Moxie.m in Sources */ = {isa = PBXBuildFile; fileRef = 289962A505B67ADF00ADBE42 /* NSUserDefaults+Moxie.m */; };
 		28A2E1DD096985710005CC4E /* dppccl in Resources */ = {isa = PBXBuildFile; fileRef = 28A2E1DB096985710005CC4E /* dppccl */; };
-		28A2E1DE096985710005CC4E /* dppccl.image in Resources */ = {isa = PBXBuildFile; fileRef = 28A2E1DC096985710005CC4E /* dppccl.image */; };
 		28B9CF3005BA185800A72136 /* WorldController.h in Headers */ = {isa = PBXBuildFile; fileRef = 28B9CF2E05BA185800A72136 /* WorldController.h */; };
 		28B9CF3105BA185800A72136 /* WorldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CF2F05BA185800A72136 /* WorldController.m */; };
 		28C36FBD05BFCB3000BAA9B7 /* Moxie.icns in Resources */ = {isa = PBXBuildFile; fileRef = 28C36FBC05BFCB3000BAA9B7 /* Moxie.icns */; };
@@ -560,7 +558,6 @@
 				280FE68806C7533F00AA47DF /* LispREPL.nib in Resources */,
 				28CDC68E06D0E4BB00D3A886 /* Moxie Help in Resources */,
 				285A4408096614D100597D37 /* init-template.lisp in Resources */,
-				285A44900966156A00597D37 /* lisp.run in Resources */,
 				285A44BC096615B700597D37 /* clhs-lookup.lisp in Resources */,
 				285A44BD096615B700597D37 /* compat-clisp.lisp in Resources */,
 				285A44BE096615B700597D37 /* compat-openmcl.lisp in Resources */,
@@ -578,7 +575,6 @@
 				2861E9E20967A48A002A271F /* save-moxie-image.lisp in Resources */,
 				2861E9E30967A48A002A271F /* sbcl.core in Resources */,
 				28A2E1DD096985710005CC4E /* dppccl in Resources */,
-				28A2E1DE096985710005CC4E /* dppccl.image in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

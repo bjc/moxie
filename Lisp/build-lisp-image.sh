@@ -5,7 +5,6 @@ export PATH
 
 build_clisp()
 {
-    mkdir $topdir/clisp/base
     clisp -i save-moxie-image.lisp
     gzip -c /tmp/lispinit.mem > base/lispinit.mem
     rm -f /tmp/lispinit.mem
@@ -25,6 +24,7 @@ build_sbcl()
 
 topdir=`dirname $0`
 
+mkdir $topdir/clisp/base
 #(cd "$topdir/clisp" && build_clisp)
 #(cd "$topdir/openmcl" && build_openmcl)
 (cd "$topdir/sbcl" && build_sbcl)
