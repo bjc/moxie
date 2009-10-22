@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,6 @@
 		28360F9B05A7CE3300841A1E /* WorldSelector.nib in Resources */ = {isa = PBXBuildFile; fileRef = 28360F9905A7CE3300841A1E /* WorldSelector.nib */; };
 		28360F9E05A7CEB100841A1E /* WorldStatusController.h in Headers */ = {isa = PBXBuildFile; fileRef = 28360F9C05A7CEB100841A1E /* WorldStatusController.h */; };
 		28360F9F05A7CEB100841A1E /* WorldStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28360F9D05A7CEB100841A1E /* WorldStatusController.m */; };
-		28396EFB05A444D000CE84B6 /* NSException+LiDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 28396EFA05A444D000CE84B6 /* NSException+LiDebugging.m */; };
 		28406A1605D0DDB4008DEAD7 /* MoxieWorld.icns in Resources */ = {isa = PBXBuildFile; fileRef = 28406A1505D0DDB4008DEAD7 /* MoxieWorld.icns */; };
 		284755F106CF0EF90078110F /* LispREPL.h in Headers */ = {isa = PBXBuildFile; fileRef = 284755EF06CF0EF90078110F /* LispREPL.h */; };
 		284755F206CF0EF90078110F /* LispREPL.m in Sources */ = {isa = PBXBuildFile; fileRef = 284755F006CF0EF90078110F /* LispREPL.m */; };
@@ -135,7 +134,6 @@
 		28360F9A05A7CE3300841A1E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/WorldSelector.nib; sourceTree = "<group>"; };
 		28360F9C05A7CEB100841A1E /* WorldStatusController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = WorldStatusController.h; sourceTree = "<group>"; };
 		28360F9D05A7CEB100841A1E /* WorldStatusController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = WorldStatusController.m; sourceTree = "<group>"; };
-		28396EFA05A444D000CE84B6 /* NSException+LiDebugging.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSException+LiDebugging.m"; sourceTree = "<group>"; };
 		28406A1505D0DDB4008DEAD7 /* MoxieWorld.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MoxieWorld.icns; sourceTree = "<group>"; };
 		284755EF06CF0EF90078110F /* LispREPL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LispREPL.h; sourceTree = "<group>"; };
 		284755F006CF0EF90078110F /* LispREPL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LispREPL.m; sourceTree = "<group>"; };
@@ -371,7 +369,6 @@
 		28FA94F806D5945700E4CC31 /* Cocoa Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				28396EFA05A444D000CE84B6 /* NSException+LiDebugging.m */,
 				289962A405B67ADF00ADBE42 /* NSUserDefaults+Moxie.h */,
 				289962A505B67ADF00ADBE42 /* NSUserDefaults+Moxie.m */,
 				288A4F1805A13FBD004C4480 /* ScrollingTextView.h */,
@@ -528,8 +525,11 @@
 /* Begin PBXProject section */
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
 			buildConfigurationList = 284BD82E08554DD700BAB8A9 /* Build configuration list for PBXProject "Moxie" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Moxie */;
 			projectDirPath = "";
@@ -606,7 +606,6 @@
 				288A4F1B05A13FBD004C4480 /* ScrollingTextView.m in Sources */,
 				282B3E3405A3F8E300A3D04F /* MxWorldSettings.m in Sources */,
 				286D8C1705A4099100D7C2A2 /* WorldSettingsController.m in Sources */,
-				28396EFB05A444D000CE84B6 /* NSException+LiDebugging.m in Sources */,
 				28360F9F05A7CEB100841A1E /* WorldStatusController.m in Sources */,
 				289962A705B67ADF00ADBE42 /* NSUserDefaults+Moxie.m in Sources */,
 				28D925D605B7B09100CC250A /* PreferencesController.m in Sources */,
@@ -726,6 +725,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Moxie_prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
@@ -744,7 +745,6 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Moxie;
@@ -824,6 +824,7 @@
 			buildSettings = {
 				GCC_ALTIVEC_EXTENSIONS = YES;
 				GCC_AUTO_VECTORIZATION = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 			};
 			name = Development;
 		};
