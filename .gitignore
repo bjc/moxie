@@ -4,4 +4,5 @@ build
 Moxie.xcodeproj/*.pbxuser
 Moxie.xcodeproj/*.perspectivev3
 Moxie.xcodeproj/*.mode1
+Moxie.xcodeproj/*.mode1v3
 Lisp/sbcl/sbcl.core
