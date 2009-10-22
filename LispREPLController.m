@@ -575,12 +575,14 @@ enum repl_lock_condition { NO_DATA, HAS_DATA };
     while ([theUpdates count] > 0) {
         NSAttributedString *replString;
         NSData *updateData;
+		NSString *updateStr;
         NSTextStorage *ts;
 
         updateData = [theUpdates objectAtIndex: 0];
-        replString = [NSAttributedString attributedStringWithString:
-            [NSString stringWithCString: [updateData bytes]
-                                 length: [updateData length]]
+		updateStr = [[[NSString alloc] initWithBytes: [updateData bytes]
+											  length: [updateData length]
+											encoding: NSUTF8StringEncoding] autorelease];
+        replString = [NSAttributedString attributedStringWithString: updateStr
                                                          attributes: [self REPLOutputAttributes]];
         
         // Insert before values, and update marks.
