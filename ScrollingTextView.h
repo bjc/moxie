@@ -2,7 +2,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ScrollingTextView : NSTextView
+@interface ScrollingTextView : NSTextView <NSLayoutManagerDelegate>
 {
     IBOutlet NSResponder *theResponder;
 }

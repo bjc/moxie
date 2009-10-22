@@ -137,12 +137,15 @@ objectValueForTableColumn: (NSTableColumn *)aTableColumn
 - (void)selectWorld: (World *)aWorld
 {
     NSArray *worlds;
+	NSIndexSet *rowIndexes;
     int row;
     
     if (aWorld) {
         worlds = [[NSDocumentController sharedDocumentController] documents];
         row = [worlds indexOfObject: aWorld];
-        [theTableView selectRow: row byExtendingSelection: NO];
+		rowIndexes = [NSIndexSet indexSetWithIndex: row];
+        [theTableView selectRowIndexes: rowIndexes
+				  byExtendingSelection: NO];
     } else
         [theTableView deselectAll: self];
 }

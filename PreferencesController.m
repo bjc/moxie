@@ -55,18 +55,17 @@
 
 - (IBAction)removeStartupWorld: (id)sender
 {
-    NSEnumerator *rowEnum;
+	NSIndexSet *selectedIndexes;
     NSMutableArray *newStartupItems;
-    NSNumber *row;
-    int removedRows;
+    __block int removedRows;
     
     newStartupItems = [[[NSUserDefaults standardUserDefaults] startupWorlds] mutableCopy];
     removedRows = 0;
-    rowEnum = [theStartupItemsTableView selectedRowEnumerator];
-    while ((row = [rowEnum nextObject]) != nil) {
-        [newStartupItems removeObjectAtIndex: [row intValue]-removedRows];
+    selectedIndexes = [theStartupItemsTableView selectedRowIndexes];
+	[selectedIndexes enumerateIndexesUsingBlock: ^(NSUInteger idx, BOOL *stop) {
+        [newStartupItems removeObjectAtIndex: idx-removedRows];
         removedRows++;
-    }
+	}];
     [[NSUserDefaults standardUserDefaults] setStartupWorlds: newStartupItems];
     [self refreshStartupTableView];
 }
