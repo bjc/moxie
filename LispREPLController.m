@@ -605,8 +605,10 @@ enum repl_lock_condition { NO_DATA, HAS_DATA };
         
         rp = [[NSAutoreleasePool alloc] init];
         inputData = [stdoutInput availableData];
-        if ([inputData length] == 0)
+        if ([inputData length] == 0) {
+            [rp release];
             continue;
+        }
         [theREPLUpdateLock lock];
         [theUpdates addObject: inputData];
         [theREPLUpdateLock unlock];
