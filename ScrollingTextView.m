@@ -48,11 +48,6 @@ didCompleteLayoutForTextContainer: (NSTextContainer *)aTextContainer
         [super keyDown: anEvent];
 }
 
-- (void)keyDownToSuper: (NSEvent *)anEvent
-{
-    [super keyDown: anEvent];
-}
-
 - (void)changeFont: (id)sender
 {
     if ([[self delegate] respondsToSelector: @selector(changeFont:)]) {

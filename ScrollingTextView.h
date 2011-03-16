@@ -6,6 +6,4 @@
 {
     IBOutlet NSResponder *theResponder;
 }
-
-- (void)keyDownToSuper: (NSEvent *)anEvent;
 @end
