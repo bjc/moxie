@@ -267,17 +267,18 @@ sig_child(int signo)
 - (void)dispatchREPLResults: (NSNotification *)resultsNotification
 {
     [theDispatcherLock lock];
+    if (theLispIsLoaded == NO) {
+        NSNotificationCenter *defaultCenter;
+        theLispIsLoaded = YES;
+        
+        defaultCenter = [NSNotificationCenter defaultCenter];
+        [defaultCenter postNotificationName: LispFinishedLoadingNotification
+                                     object: self];
+    }
+
     while ([theREPLResults count] > 0) {
         id result;
         
-        if (theLispIsLoaded == NO) {
-            NSNotificationCenter *defaultCenter;
-            theLispIsLoaded = YES;
-            
-            defaultCenter = [NSNotificationCenter defaultCenter];
-            [defaultCenter postNotificationName: LispFinishedLoadingNotification
-                                         object: self];
-        }
         result = [theREPLResults objectAtIndex: 0];
         if ([result isKindOfClass: [NSArray class]]) {
             NSString *command;
