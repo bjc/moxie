@@ -21,7 +21,7 @@
                                :protocol :tcp)))
     (sb-bsd-sockets:socket-connect socket (coerce-inet-address-designator host) port)
     (let ((stream (sb-bsd-sockets:socket-make-stream socket
-                                                     :input t :output t :buffering buffering)))
+                                                     :input t :output t :buffering buffering :external-format :latin-1)))
       (setf (gethash stream *stream-to-socket*) socket)
       stream)))
 

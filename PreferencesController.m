@@ -23,34 +23,27 @@
     NSOpenPanel *openPanel;
     
     openPanel = [NSOpenPanel openPanel];
-    [openPanel setAllowsMultipleSelection: YES];
-    [openPanel beginSheetForDirectory: nil
-                                 file: nil
-                                types: [NSArray arrayWithObject: @"moxie"]
-                       modalForWindow: [self window]
-                        modalDelegate: self
-                       didEndSelector: @selector(openPanelDidEnd:returnCode:contextInfo:)
-                          contextInfo: NULL];
-}
-
-- (void)openPanelDidEnd: (NSOpenPanel *)sheet
-             returnCode: (int)returnCode
-            contextInfo: (void *)contextInfo
-{
-    if (returnCode == NSOKButton) {
-        NSEnumerator *pathEnum;
-        NSMutableArray *newContents;
-        NSString *path;
-        
-        newContents = [NSMutableArray arrayWithArray: [[NSUserDefaults standardUserDefaults] startupWorlds]];
-        pathEnum = [[sheet filenames] objectEnumerator];
-        while ((path = [pathEnum nextObject]) != nil) {
-            [newContents addObject: path];
+    
+    void (^openHandler)(NSInteger) = ^(NSInteger result)
+    {
+        if (result == NSFileHandlingPanelOKButton) {
+            NSEnumerator *pathEnum;
+            NSMutableArray *newContents;
+            NSString *path;
+            
+            newContents = [NSMutableArray arrayWithArray: [[NSUserDefaults standardUserDefaults] startupWorlds]];
+            pathEnum = [[openPanel URLs] objectEnumerator];
+            while ((path = [pathEnum nextObject]) != nil) {
+                [newContents addObject: path];
+            }
+            
+            [[NSUserDefaults standardUserDefaults] setStartupWorlds: newContents];
+            [self refreshStartupTableView];            
         }
-        
-        [[NSUserDefaults standardUserDefaults] setStartupWorlds: newContents];
-        [self refreshStartupTableView];
-    }
+    };
+    
+    [openPanel setAllowsMultipleSelection: YES];
+    [openPanel beginSheetModalForWindow:[self window] completionHandler: openHandler];
 }
 
 - (IBAction)removeStartupWorld: (id)sender

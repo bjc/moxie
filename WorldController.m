@@ -64,15 +64,15 @@
 {
     // Start up the embedded lisp.
     [LispREPLController sharedController];
-    if ([[LispREPL sharedREPL] isLoaded] == NO) {
-        NSNotificationCenter *defaultCenter;
-
-        defaultCenter = [NSNotificationCenter defaultCenter];
-        [defaultCenter addObserver: self
-                          selector: @selector(lispFinishedLoading:)
-                              name: LispFinishedLoadingNotification
-                            object: nil];
-    }
+//    if ([[LispREPL sharedREPL] isLoaded] == NO) {
+//        NSNotificationCenter *defaultCenter;
+//
+//        defaultCenter = [NSNotificationCenter defaultCenter];
+//        [defaultCenter addObserver: self
+//                          selector: @selector(lispFinishedLoading:)
+//                              name: LispFinishedLoadingNotification
+//                            object: nil];
+//    }
 
     [NSColor setIgnoresAlpha: NO];
     if ([[NSUserDefaults standardUserDefaults] startupShowWorldSelector]) {

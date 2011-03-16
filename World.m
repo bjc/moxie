@@ -73,7 +73,6 @@ localizedSettingName(NSString *settingName)
 {
     NSLog(@"DEBUG: [World readFromURL: %@ ofType: %@ error: (ptr)]", absoluteURL, aType);
 
-    *errorPtr = nil;
     [self sendWindowEventWithArgs: @":LOAD-WORLD", [LispSymbol symbolNamed: @":PATH"], [absoluteURL path], nil];
     return YES;
 }
@@ -82,7 +81,6 @@ localizedSettingName(NSString *settingName)
 {
     NSLog(@"DEBUG: [World writeToURL: %@ ofType: %@ error: (ptr)]", absoluteURL, aType);
 
-    *errorPtr = nil;
     [self sendWindowEventWithArgs: @":SAVE-WORLD", [LispSymbol symbolNamed: @":PATH"], [absoluteURL path], nil];
     usleep(2000000); // XXX - should just wait until the file shows up or something.
     return YES;

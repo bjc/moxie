@@ -115,7 +115,7 @@ See the functions add-hook and remove-hook.")
                    (setq i it))
                  (princ char result))))
     result))
-       
+
 (defun escape-mux-string (string)
   "Returns a string made from STRING with substitutions for white space."
   (with-output-to-string (result)

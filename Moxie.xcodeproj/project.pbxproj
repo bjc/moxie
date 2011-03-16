@@ -132,8 +132,8 @@
 		282B3E3105A3F8E300A3D04F /* MxWorldSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxWorldSettings.h; sourceTree = "<group>"; };
 		282B3E3205A3F8E300A3D04F /* MxWorldSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxWorldSettings.m; sourceTree = "<group>"; };
 		28360F9A05A7CE3300841A1E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/WorldSelector.nib; sourceTree = "<group>"; };
-		28360F9C05A7CEB100841A1E /* WorldStatusController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = WorldStatusController.h; sourceTree = "<group>"; };
-		28360F9D05A7CEB100841A1E /* WorldStatusController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = WorldStatusController.m; sourceTree = "<group>"; };
+		28360F9C05A7CEB100841A1E /* WorldStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldStatusController.h; sourceTree = "<group>"; };
+		28360F9D05A7CEB100841A1E /* WorldStatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldStatusController.m; sourceTree = "<group>"; };
 		28406A1505D0DDB4008DEAD7 /* MoxieWorld.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MoxieWorld.icns; sourceTree = "<group>"; };
 		284755EF06CF0EF90078110F /* LispREPL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LispREPL.h; sourceTree = "<group>"; };
 		284755F006CF0EF90078110F /* LispREPL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LispREPL.m; sourceTree = "<group>"; };
@@ -181,15 +181,15 @@
 		286D8C1505A4099100D7C2A2 /* WorldSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldSettingsController.m; sourceTree = "<group>"; };
 		286FE9F205BE3B9E005A01FF /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/SettingNames.strings; sourceTree = "<group>"; };
 		288A4EFA05A12FDE004C4480 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/WorldSettings.nib; sourceTree = "<group>"; };
-		288A4F1805A13FBD004C4480 /* ScrollingTextView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ScrollingTextView.h; sourceTree = "<group>"; };
-		288A4F1905A13FBD004C4480 /* ScrollingTextView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ScrollingTextView.m; sourceTree = "<group>"; };
+		288A4F1805A13FBD004C4480 /* ScrollingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingTextView.h; sourceTree = "<group>"; };
+		288A4F1905A13FBD004C4480 /* ScrollingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingTextView.m; sourceTree = "<group>"; };
 		289962A405B67ADF00ADBE42 /* NSUserDefaults+Moxie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Moxie.h"; sourceTree = "<group>"; };
 		289962A505B67ADF00ADBE42 /* NSUserDefaults+Moxie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Moxie.m"; sourceTree = "<group>"; };
 		28A0F61C05B17A4700035E74 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/World.nib; sourceTree = "<group>"; };
 		28A2E1DB096985710005CC4E /* dppccl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = dppccl; sourceTree = "<group>"; };
 		28A2E1DC096985710005CC4E /* dppccl.image */ = {isa = PBXFileReference; lastKnownFileType = file; path = dppccl.image; sourceTree = "<group>"; };
-		28B9CF2E05BA185800A72136 /* WorldController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = WorldController.h; sourceTree = "<group>"; };
-		28B9CF2F05BA185800A72136 /* WorldController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = WorldController.m; sourceTree = "<group>"; };
+		28B9CF2E05BA185800A72136 /* WorldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldController.h; sourceTree = "<group>"; };
+		28B9CF2F05BA185800A72136 /* WorldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldController.m; sourceTree = "<group>"; };
 		28C36FBC05BFCB3000BAA9B7 /* Moxie.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Moxie.icns; sourceTree = "<group>"; };
 		28C6947A06F55DC000341CDE /* NSDictionary+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+LispExtensions.h"; sourceTree = "<group>"; };
 		28C6947B06F55DC000341CDE /* NSDictionary+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+LispExtensions.m"; sourceTree = "<group>"; };
@@ -197,16 +197,16 @@
 		28D8059D06E9B04C002B3FAF /* NSString+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LispExtensions.h"; sourceTree = "<group>"; };
 		28D8059E06E9B04C002B3FAF /* NSString+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LispExtensions.m"; sourceTree = "<group>"; };
 		28D925D105B7AF5E00CC250A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Preferences.nib; sourceTree = "<group>"; };
-		28D925D305B7B09100CC250A /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
-		28D925D405B7B09100CC250A /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		28D925D305B7B09100CC250A /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		28D925D405B7B09100CC250A /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		28F9039A06EE45AF00D5ADA9 /* NSArray+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LispExtensions.h"; sourceTree = "<group>"; };
 		28F9039B06EE45AF00D5ADA9 /* NSArray+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LispExtensions.m"; sourceTree = "<group>"; };
 		28F903A206EE490C00D5ADA9 /* LispSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LispSymbol.h; sourceTree = "<group>"; };
 		28F903A306EE490C00D5ADA9 /* LispSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LispSymbol.m; sourceTree = "<group>"; };
 		28F9046C06F2305300D5ADA9 /* NSFileHandle+LispExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+LispExtensions.h"; sourceTree = "<group>"; };
 		28F9046D06F2305300D5ADA9 /* NSFileHandle+LispExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+LispExtensions.m"; sourceTree = "<group>"; };
-		2A37F4ACFDCFA73011CA2CEA /* World.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
-		2A37F4AEFDCFA73011CA2CEA /* World.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		2A37F4ACFDCFA73011CA2CEA /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A37F4B7FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -530,7 +530,11 @@
 			};
 			buildConfigurationList = 284BD82E08554DD700BAB8A9 /* Build configuration list for PBXProject "Moxie" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Moxie */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -726,7 +730,7 @@
 				GCC_PREFIX_HEADER = Moxie_prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_USE_GCC3_PFE_SUPPORT = NO;
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
@@ -772,6 +776,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Moxie_Prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
@@ -800,6 +805,7 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Moxie_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;

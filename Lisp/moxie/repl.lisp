@@ -52,6 +52,7 @@ has been entered, so Moxie can keep track of the prompt."
 (defmacro eval-hook (&rest forms)
   "Ensure all FORMS are valid for evaluation before calling
 EVAL-HOOK-HELPER."
+  (format t "bjc: DEBUG: forms: ~p~%" forms)
   (let ((helped-forms (mapcar (lambda (x) `(quote ,x)) forms)))
     `(eval-hook-helper ,@helped-forms)))
 
