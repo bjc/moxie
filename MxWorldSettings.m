@@ -323,7 +323,7 @@
         [self removeObjectForKey: @":TEXT-COLOR"];
     else {
         NSColor *rgbColor;
-        float r, g, b, a;
+        CGFloat r, g, b, a;
 
         rgbColor = [aColor colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
         [rgbColor getRed: &r green: &g blue: &b alpha: &a];
@@ -354,7 +354,7 @@
         [self removeObjectForKey: @":BACKGROUND-COLOR"];
     else {
         NSColor *rgbColor;
-        float r, g, b, a;
+        CGFloat r, g, b, a;
         
         rgbColor = [aColor colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
         [rgbColor getRed: &r green: &g blue: &b alpha: &a];

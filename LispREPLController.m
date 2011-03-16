@@ -650,8 +650,8 @@ shouldChangeTextInRange: (NSRange)affectedCharRange
   forPartialWordRange: (NSRange)charRange
   indexOfSelectedItem: (int *)i
 {
-    NSLog(@"[LispREPLController textView %@ completions: %@ forPartialWordRange: (%d, %d) indexOfSelectedItem: %d]",
-          textView, words, charRange.location, charRange.length, *i);
+    NSLog(@"[LispREPLController textView %@ completions: %@ forPartialWordRange: (%u, %u) indexOfSelectedItem: %d]",
+          textView, words, (unsigned)charRange.location, (unsigned)charRange.length, *i);
     return words;
 }
 

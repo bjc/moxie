@@ -90,7 +90,7 @@ LispSymbol *BIG_NIL = nil;
     return result;
 }
 
-- (unsigned)hash
+- (NSUInteger)hash
 {
     return [[self name] hash];
 }

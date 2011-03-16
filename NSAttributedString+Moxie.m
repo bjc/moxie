@@ -145,7 +145,7 @@
         tmpForm = [attrDict objectForKey: @":BOLD"];
         if (tmpForm) {
             NSColor *preColor;
-            float r, g, b, a;
+            CGFloat r, g, b, a;
             
             preColor = [myAttributes objectForKey: NSForegroundColorAttributeName];
             if (preColor == nil)
