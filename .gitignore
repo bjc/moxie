@@ -5,4 +5,6 @@ Moxie.xcodeproj/*.pbxuser
 Moxie.xcodeproj/*.perspectivev3
 Moxie.xcodeproj/*.mode1
 Moxie.xcodeproj/*.mode1v3
+Moxie.xcodeproj/project.xcworkspace/xcuserdata
+Moxie.xcodeproj/xcuserdata
 Lisp/sbcl/sbcl.core
