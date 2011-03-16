@@ -255,8 +255,8 @@ sig_child(int signo)
 {
     [[LispREPLController sharedController] showWindow: self];
     NSRunCriticalAlertPanel(@"REPL died", @"The REPL sub-process has died, and Moxie cannot continue.",
-                            @"OK", @"Retry", @"DEBUG");
-//    [NSApp stop: self]; 
+                            @"Quit", nil, nil);
+    [NSApp stop: self]; 
 }
 
 /*
